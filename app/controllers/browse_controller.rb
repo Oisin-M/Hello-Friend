@@ -20,28 +20,34 @@ class BrowseController < ApplicationController
     project_id = params[:id]
 
     like=Like.new(account_id: current_account.id, project_id: project_id.to_i, liked: true)
-
-    if like.save
-
-    else
-
-    end
-
   end
 
   def decline
     project_id = params[:id]
 
     like=Like.new(account_id: current_account.id, project_id: project_id.to_i, liked: false)
-
-    if like.save
-
-    else
-
-    end
-
   end
 
+  def open_conversation
+    id = params[:id]
+    @profile = Account.find(id)
+    match = Match.between(current_account.id, id)
+    @match = match.first if match.present?
+
+    conversation = Conversation.between(id, current_account.id)
+
+    @conversation = conversation.size > 0 ? conversation.first : Conversation.new
+    @messages = @conversation.messages.includes(account: :images_attachments) if @conversation.persisted?
+    @message = @conversation.messages.build
+
+    if @profile.present?
+      respond_to do |format|
+        format.js {
+          render "browse/conversation"
+        }
+      end
+    end
+  end
 
 
 

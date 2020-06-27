@@ -46,7 +46,7 @@ $(".open-conversation").on("click", function() {
   var account_id = $(this).data("acc_id");
   console.log("acc");
   console.log(account_id);
-  
+
   //
   // $.ajax({
   //   url: "/get/conversation/"+account_id,
