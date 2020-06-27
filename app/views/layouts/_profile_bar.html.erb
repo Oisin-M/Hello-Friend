@@ -1,7 +1,7 @@
 <div class="profile-bar">
-  <%= link_to "Sign Out", destroy_account_session_path, method: :delete, class: "float-right text-white mt-2 btn btn-outline-success btn-dark" %>
+  <%= link_to "Sign Out", destroy_account_session_path, method: :delete, class: "float-right text-white mt-0 btn btn-outline-success btn-dark" %>
 
-  <%= link_to "My Profile", edit_account_registration_path, class: "my-profile text-white" %>
+  <%= link_to "My Profile", edit_account_registration_path, class: "my-profile text-white font-weight-bolder" %>
 
   <div style="margin-top:10px">
     <%= link_to "My Projects", projects_path, class: "my-profile text-white", style: "font-size:90%" %>
