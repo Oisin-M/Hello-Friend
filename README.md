@@ -10,29 +10,29 @@ This will eventually be imported into the Projects section on github.
 
 - [ ] Setting up messageing between a project and a user. (Koff, imBOSible2)
     1. Make a Model
-2. Editing the sign-up and Browse section. (BluBarry, pumpkineaters)
-3. Fixing the Projects (i.e. to do list) section. (CKnight-)
+- [ ] Editing the sign-up and Browse section. (BluBarry, pumpkineaters)
+- [ ] Fixing the Projects (i.e. to do list) section. (CKnight-)
 
 
 ### Unknown Importance / Progress Projects
 - [ ] Match to projects and message projects not people
 - [ ] Match Project's "Interest Category" to profject's "Category"
-- [ ]Add/edit up to 5 projects (new model) (/project)
-- [ ]Markdown in messages
-- [ ]View Multiple projects, not accounts
-- [ ]Refactor design: Homepage
-- [ ]View/edit public profile details (new model? or part of devise) (/project)
+- [ ] Add/edit up to 5 projects (new model) (/project)
+- [ ] Markdown in messages
+- [ ] View Multiple projects, not accounts
+- [ ] Refactor design: Homepage
+- [ ] View/edit public profile details (new model? or part of devise) (/project)
 
 
 
 #### Future (Important) 
-1. First Important project.
+- [ ] First Important project.
 
 #### Future (Not Important)
-1. Report systems plus make users have to accept chat
-2. Integrate with github
-3. Add animation
-4. Filter based off timezones, project sizes etc.
+- [ ] Report systems plus make users have to accept chat
+- [ ] Integrate with github
+- [ ] Add animation
+- [ ] Filter based off timezones, project sizes etc.
 
 
 
