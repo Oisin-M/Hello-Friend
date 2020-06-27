@@ -17,7 +17,11 @@
 @import "bootstrap/scss/bootstrap";
 #signin{
   text-align: center;
-
+  font-size: 15px;
+}
+#signinthing{
+  font-size: 20px;
+}
 
 .center {
   margin: 0;
@@ -31,6 +35,4 @@
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-}
-
 }
