@@ -5,7 +5,7 @@
 }
 </style>
 
-<h2 style="color:white">Edit <%= resource_name.to_s.humanize %></h2>
+<h2 id="topper" style="color:white">Edit <%= resource_name.to_s.humanize %></h2>
 <body class="center"
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -19,7 +19,7 @@
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
 
-    <div class="field">
+    <div  class="field">
       <%= f.label :username %><br />
       <%= f.text_field :username, autofocus: true %>
     </div>
