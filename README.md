@@ -13,6 +13,17 @@ This will eventually be imported into the Projects part.
 3. Fixing the Projects section. (CKnight-)
 
 
+### Unknown Importance / Progress Projects
+1. Match to projects and message projects not people
+2. Match Project's "Interest Category" to profject's "Category"
+3. Add/edit up to 5 projects (new model) (/project)
+4. Markdown in messages
+5. View Multiple projects, not accounts
+6. Refactor design: Homepage
+7. View/edit public profile details (new model? or part of devise) (/project)
+
+
+
 #### Future (Important) 
 1. First Important project.
 
@@ -31,4 +42,4 @@ This will eventually be imported into the Projects part.
 ## Using our Site
 
 ### For Devs
-run ```rails db:seed```
+Running  ```rails db:seed```  will generate a number of seed accounts (details in db/seeds.rb) with emails set to all the devs email, and password as ```Password``` 
