@@ -9,7 +9,7 @@
           <a class="nav-link" href="#">Contact</a>
           <%= link_to "Sign out", destroy_account_session_path, method: :delete, class: "btn btn-secondary mr-2" %>
           <%= link_to "My projects", projects_path, class: "btn btn-outline-primary" %>
-
+          <%= link_to "Browse", browse_path, class: "btn btn-outline-primary" %>
         </nav>
     </div>
   </header>
@@ -18,7 +18,7 @@
     <div class="typewriter">
       <div class="typewriter-text">{ Hello, friend! }</div>
     </div>
-    <p style="color:white;" class="lead">Yeee, coding with the bois</p>
+    <p id="subtex" class="lead">Yeee, coding with the bois</p>
     <p class="lead">
       <a style="color:white;" href="accounts/sign_up" class="btn btn-lg btn-secondary">Sign up</a>
     </p>
