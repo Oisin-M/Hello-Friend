@@ -30,8 +30,12 @@ ActiveRecord::Schema.define(version: 2020_06_27_155524) do
   end
 
   create_table "conversations", force: :cascade do |t|
+    t.integer "acc_id", null: false
+    t.integer "proj_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["acc_id"], name: "index_conversations_on_acc_id"
+    t.index ["proj_id"], name: "index_conversations_on_proj_id"
   end
 
   create_table "likes", force: :cascade do |t|
