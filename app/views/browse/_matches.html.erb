@@ -1,4 +1,11 @@
+<strong>My Projects</strong></br>
+<% @my_projects.each do |proj| %>
+  <%= proj.title %>
+<% end %>
+
+</br>
+
+<strong>Liked Projects</strong></br>
 <% @likes.each do |like| %>
-  <%= like.project_id %>
   <%= Project.find(like.project_id).title %>
 <% end %>
