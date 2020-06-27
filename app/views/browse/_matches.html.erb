@@ -5,7 +5,7 @@
 
     <%= proj.title %>
 
-    <div id="message" class="d-inline-block fa-stack fa-2x">
+    <div id="open-conversation" data-id="<%= proj.id %>" class="d-inline-block fa-stack fa-2x">
       <i class="fa fa-circle fa-stack-2x text-white"></i>
       <i class="fa fa-comment fa-stack-1x text-success"></i>
     </div>
@@ -22,7 +22,7 @@
 
     <%= Project.find(like.project_id).title %>
 
-    <div id="message" class="d-inline-block fa-stack fa-2x">
+    <div id="open-conversation" data-id="<%= like.project_id %>" class="d-inline-block fa-stack fa-2x">
       <i class="fa fa-circle fa-stack-2x text-white"></i>
       <i class="fa fa-comment fa-stack-1x text-success"></i>
     </div>
