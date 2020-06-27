@@ -29,12 +29,14 @@
 
   <div class="field">
     <%= f.label :interests %><br />
-    <%= f.select :interests, [['McDonalds','mcdonalds'],['SuperMacs','supermacs'],['Moms Cooking','moms cooking']] %>
+    <%= f.select :interests, [['McDonalds','mcdonalds'],['SuperMacs','supermacs'],['Moms Cooking','moms cooking']],
+      {:multiple=>true} %>
   </div>
 
   <div class="field">
     <%= f.label :skills %><br />
-    <%= f.select :skills, [['Chess','chess'],['Overwatch','overwatch'],['Hacking','hacking']] %>
+    <%= f.select :skills, [['Chess','chess'],['Overwatch','overwatch'],['Hacking','hacking']],
+      {:multiple=>true} %>
   </div>
 
   <div class="field">
