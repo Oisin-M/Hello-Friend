@@ -1,8 +1,8 @@
 <!-- Browse Window -->
 <ul id="slides">
-  <% @users.each do |user| %>
-  <div class="slide showing" data-id="<%= user.id %>">
-    <li style="color:white"><%= user.first_name %></li>
+  <% @projects.each do |project| %>
+  <div class="slide showing" data-id="<%= project.description %>">
+    <li style="color:white"><%= project %></li>
   </div>
   <% end %>
 </ul>
