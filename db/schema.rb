@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_27_082602) do
+ActiveRecord::Schema.define(version: 2020_06_27_093341) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,13 +30,14 @@ ActiveRecord::Schema.define(version: 2020_06_27_082602) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.integer "account_id"
+    t.integer "account_id", null: false
     t.text "description"
     t.text "skills"
-    t.string "category"
+    t.text "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["account_id"], name: "index_projects_on_account_id"
   end
 
+  add_foreign_key "projects", "accounts"
 end
