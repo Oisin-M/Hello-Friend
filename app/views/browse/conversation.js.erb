@@ -21,12 +21,13 @@
     checkReady(function($) {
       $(function() {
 
+        console.log("HELLO FROM CONVERSATION.JS.ERB");
 
         $("#conversation").html("<%= escape_javascript(render partial: 'browse/conversation') %>").show();
 
-        $("#close-conversation").on("click", function() {
-          $("#conversation").hide();
-        });
+        // $("#close-conversation").on("click", function() {
+        //   $("#conversation").hide();
+        // });
 
 
       });

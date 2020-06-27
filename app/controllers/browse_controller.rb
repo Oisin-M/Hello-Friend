@@ -29,15 +29,20 @@ class BrowseController < ApplicationController
   end
 
   def open_conversation
-    id = params[:id]
-    @profile = Account.find(id)
-    match = Match.between(current_account.id, id)
-    @match = match.first if match.present?
+    id = params[:ids]
+    account_id, project_id = id.split("-")
 
-    conversation = Conversation.between(id, current_account.id)
+    @profile = Account.find(account_id)
+    @liked_project = Project.find(project_id)
 
-    @conversation = conversation.size > 0 ? conversation.first : Conversation.new
-    @messages = @conversation.messages.includes(account: :images_attachments) if @conversation.persisted?
+    like = Like.where(account_id: account_id).where(project_id: project_id)
+
+    @like = like.first if like.present?
+
+    conversation = Conversation.where(acc_id: account_id, proj_id: project_id)
+
+    @conversation = conversation.size > 0 ? conversation.first : Conversation.new(acc_id: account_id, proj_id: project_id)
+
     @message = @conversation.messages.build
 
     if @profile.present?
