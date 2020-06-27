@@ -18,14 +18,6 @@ $("#decline").on("click", function(){
 function goToSlide(action) {
   $activeSlide.removeClass("showing");
   $activeSlide = $activeSlide.next(".slide");
-
-  //send data to controller
-  if( action == "approve"){
-
-  } else {
-
-  }
-
   $activeSlide.addClass("showing");
 }
 });
