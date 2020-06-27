@@ -4,6 +4,8 @@ class BrowseController < ApplicationController
   def browse
     # Load in project
     @projects = Project.where.not(account_id: current_account)
+    @my_projects = Project.where(account_id: current_acount)
+    @likes = Like.where(account_id: current_account)
 
   end
 
