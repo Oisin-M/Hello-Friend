@@ -1,5 +1,6 @@
 <div>
-<img src=<%=asset_path('hello.PNG')%> width="400">
+<img src=<%=asset_path('hello.PNG')%> height="100">
+</div>
 <div class="row">
   <div class="col-md-4 bg-white">
     <%= render "layouts/profile_bar" %>
@@ -49,5 +50,4 @@
 <%= link_to "Sign out", destroy_account_session_path, method: :delete, class: "btn btn-secondary mr-2" %>
     </div>
   </div>
-</div>
 </div>
