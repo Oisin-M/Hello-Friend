@@ -1,12 +1,14 @@
 <%= link_to "Sign out", destroy_account_session_path, method: :delete, class: "btn btn-secondary mr-2" %>
 
-<!-- Browse Window -->
-<ul id="slides">
-  <% @projects.each do |project| %>
-  <div class="slide" data-id="<%= project.id %>">
-    <li style="color:white"><%= project.title %></li>
-  </div>-
-  <% end %>
-</ul>
-<button class="controls" id="decline">NO</button>
-<button class="controls" id="approve">YES</button>
+<div class="container float-right mt-5 mr-5">
+  <!-- Browse Window -->
+  <ul id="slides">
+    <% @projects.each do |project| %>
+    <div class="slide" data-id="<%= project.id %>">
+      <li style="color:white"><%= project.title %></li>
+    </div>-
+    <% end %>
+  </ul>
+  <button class="controls" id="decline">NO</button>
+  <button class="controls" id="approve">YES</button>
+</div>
