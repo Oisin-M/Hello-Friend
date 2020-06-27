@@ -13,7 +13,7 @@ table, th, td {
 <body style="margin-left:10%; margin-top:5%">
   <h1 style="color:white">Projects</h1>
 
-  <table style="color:white">
+  <table style="color:white; background-color:#272727">
     <thead>
       <tr>
         <th>Title</th>
@@ -31,7 +31,7 @@ table, th, td {
           <td><%= project.description %></td>
           <td><%= project.skills %></td>
           <td><%= project.category %></td>
-          <td><%= link_to 'Show', project, class: "btn btn-outline-primary" %></td>
+          <td><%= link_to 'Show', project, class: "btn btn-outline-info" %></td>
           <td><%= link_to 'Edit', edit_project_path(project), class: "btn btn-outline-warning" %></td>
           <td><%= link_to 'Destroy', project, class: "btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
