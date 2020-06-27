@@ -17,7 +17,7 @@ class BrowseController < ApplicationController
 
   def create_conversation(project_id)
 
-    conversation=Conversation.new(account_ID: current_account.id, project_id: project_id)
+    conversation=Conversation.new(account_id: current_account.id, project_id: project_id)
 
   end
 
