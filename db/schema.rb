@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_27_093341) do
+ActiveRecord::Schema.define(version: 2020_06_27_103859) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
+    t.string "username", default: "", null: false
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "interests", default: "", null: false
+    t.string "skills", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -31,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_06_27_093341) do
     t.text "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
     t.index ["account_id"], name: "index_projects_on_account_id"
   end
 

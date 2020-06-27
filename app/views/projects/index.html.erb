@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Account</th>
+      <th>Title</th>
       <th>Description</th>
       <th>Skills</th>
       <th>Category</th>
@@ -17,6 +18,7 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.account_id %></td>
+        <td><%= project.title %></td>
         <td><%= project.description %></td>
         <td><%= project.skills %></td>
         <td><%= project.category %></td>
