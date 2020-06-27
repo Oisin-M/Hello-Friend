@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   post "/approve/:id" => "browse#approve", as: :approve_profile
   post "/decline/:id" => "browse#decline", as: :decline_profile
 
+  post "/get_conversation/:ids" => "browse#open_conversation", as: :open_conversation
+
 end
