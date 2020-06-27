@@ -6,12 +6,12 @@ var $activeSlide = $('#slides .slide:first-child');
 $activeSlide.addClass("showing");
 
 $("#approve").on("click", function(){
-  console.log("approve");
+  //console.log("approve");
   goToSlide('approve');
 })
 
 $("#decline").on("click", function(){
-  console.log("decline");
+  //console.log("decline");
   goToSlide('decline');
 })
 

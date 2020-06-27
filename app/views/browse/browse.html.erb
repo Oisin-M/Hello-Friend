@@ -1,10 +1,10 @@
 <!-- Browse Window -->
 <ul id="slides">
   <% @projects.each do |project| %>
-  <div class="slide showing" data-id="<%= project.title %>">
-    <li style="color:white"><%= project %></li>
+  <div class="slide showing" data-id="<%= project.id %>">
+    <li style="color:white"><%= project.title %></li>
   </div>
   <% end %>
 </ul>
-<button class="controls" id="previous">NO</button>
-<button class="controls" id="next">YES</button>
+<button class="controls" id="decline">NO</button>
+<button class="controls" id="approve">YES</button>
