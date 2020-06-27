@@ -25,4 +25,10 @@ This will eventually be imported into the Projects part.
 
 ## Description of the Project
 
-{ Hello, friend! } is a revolutionary new project; aiming to unite programming abilities around the wolrd with new and exciting projects. We have taken inspiration from matchmaking sites such as Tinder, and initally built a clone website useing this [tutorial](https://www.youtube.com/watch?v=P5gAaZq-sPs&list=PLtZ8UuFjvnDfqEJ4EQytX4x3Uxwb7i7F7)
+{ Hello, friend! } is a revolutionary new project; aiming to unite programming abilities around the wolrd with new and exciting projects. We have taken inspiration from matchmaking sites such as Tinder, and initally built a clone website useing this [tutorial](https://www.youtube.com/watch?v=P5gAaZq-sPs&list=PLtZ8UuFjvnDfqEJ4EQytX4x3Uxwb7i7F7) series.
+
+
+## Using our Site
+
+### For Devs
+run ```rails db:seed```
