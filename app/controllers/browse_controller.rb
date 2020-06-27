@@ -45,7 +45,13 @@ class BrowseController < ApplicationController
 
     @conversation = conversation.size > 0 ? conversation.first : Conversation.new(acc_id: account_id, proj_id: project_id)
 
-    @message = @conversation.messages.build
+    # if @conversation.save
+    #
+    # else
+    #
+    # end
+
+    # @message = @conversation.messages.build
 
     if @profile.present?
       respond_to do |format|
