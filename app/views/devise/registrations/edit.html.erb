@@ -29,12 +29,12 @@
 
   <div class="field">
     <%= f.label :interests %><br />
-    <%= f.text_field :interests, autofocus: true %>
+    <%= f.select :interests, [['McDonalds','mcdonalds'],['SuperMacs','supermacs'],['Moms Cooking','moms cooking']] %>
   </div>
 
   <div class="field">
     <%= f.label :skills %><br />
-    <%= f.text_field :skills, autofocus: true %>
+    <%= f.select :skills, [['Chess','chess'],['Overwatch','overwatch'],['Hacking','hacking']] %>
   </div>
 
   <div class="field">
