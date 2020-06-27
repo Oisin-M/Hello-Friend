@@ -5,7 +5,8 @@ class BrowseController < ApplicationController
     # Load in project
     @projects = Project.where.not(account_id: current_account)
     @my_projects = Project.where(account_id: current_account)
-    @likes = Like.where(account_id: current_account)
+    @seen = Like.where(account_id: current_account)
+    @likes = @seen.where(liked: true)
 
   end
 
