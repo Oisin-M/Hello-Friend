@@ -4,6 +4,15 @@ body {
     background: linear-gradient(to bottom, #171717 0%, #171717 0%);
 }
 
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 .typewriter {
     font-family: Courier, monospace;
 	display: inline-block;
