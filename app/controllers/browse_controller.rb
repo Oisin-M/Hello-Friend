@@ -12,7 +12,7 @@ class BrowseController < ApplicationController
   def approve
     project_id = params[:id]
 
-    like=Like.new(account_id: current_account, project_id: project_id.to_i, liked: true)
+    like=Like.new(account_id: current_account.id, project_id: project_id.to_i, liked: true)
 
     if like.save
 
@@ -25,7 +25,7 @@ class BrowseController < ApplicationController
   def decline
     project_id = params[:id]
 
-    like=Like.new(account_id: current_account, project_id: project_id.to_i, liked: false)
+    like=Like.new(account_id: current_account.id, project_id: project_id.to_i, liked: false)
 
     if like.save
 

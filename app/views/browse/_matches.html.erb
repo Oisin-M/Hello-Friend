@@ -1,6 +1,4 @@
-<% current_account.likes.each do |like| %>
-  <%= like %>
-  <%= current_account.id %>
+<% @likes.each do |like| %>
+  <%= like.project_id %>
+  <%= Project.find(like.project_id).title %>
 <% end %>
-
-<%= current_account.id %>
