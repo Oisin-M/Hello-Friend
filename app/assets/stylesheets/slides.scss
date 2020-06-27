@@ -24,6 +24,12 @@ these make the slideshow work
     -moz-transition: opacity 1s;
     -o-transition: opacity 1s;
     transition: opacity 1s;
+
+    font-size: 40px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #333;
+    color: #fff;
 }
 
 .showing {
@@ -34,14 +40,6 @@ these make the slideshow work
 non-essential styles:
 just for appearance; change whatever you want
 */
-
-.slide {
-    font-size: 40px;
-    padding: 40px;
-    box-sizing: border-box;
-    background: #333;
-    color: #fff;
-}
 
 .slide:nth-of-type(1) {
     background: red;
