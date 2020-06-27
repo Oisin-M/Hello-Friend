@@ -16,7 +16,7 @@ Account.create([
 
 Project.create([
   {account_id: 1, title: "Project 1", description: "A sample project by Scott", skills: "HTML", category: "Voluntary Computing"},
-  {account_id: 2, title: "Project 2", description: "A sample project by Brian", skills: "Ruby", category: "Voluntary Computing"},
+  {account_id: 2, title: "Project 2", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer euismod ex ac leo tempus scelerisque. Proin accumsan blandit metus scelerisque ultrices. Etiam consectetur dolor sit amet ante rhoncus semper. Donec ultrices at ipsum id posuere. Phasellus pharetra sem eros, sit amet tristique ligula mollis in. Pellentesque condimentum, ligula ac dignissim suscipit, ligula leo lobortis turpis, in posuere nibh erat at nulla. Suspendisse quis tortor in risus imperdiet convallis ac ut sapien. Etiam metus sem, elementum eget pellentesque id, mattis at dui. Fusce dictum egestas elit. Nam lacinia nisl et lacinia egestas. Cras consectetur ex vestibulum ultrices venenatis. Vivamus sagittis quis nunc vitae ultricies. ", skills: "Ruby", category: "Voluntary Computing"},
   {account_id: 3, title: "Project 3", description: "A sample project by Oisin", skills: "JS", category: "Voluntary Computing"},
   {account_id: 4, title: "Project 4", description: "A sample project by Barry", skills: "CSS", category: "Voluntary Computing"},
   {account_id: 5, title: "Project 5", description: "A sample project by Cormac", skills: "Bootstrap", category: "Voluntary Computing"},
