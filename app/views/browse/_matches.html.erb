@@ -1,20 +1,23 @@
 <strong>My Projects</strong><br/>
 
 <% @my_projects.each do |proj| %>
-  <div class="open-conversation" data-id="<%= proj.id %>">
 
     <strong><%= proj.title %></strong>
+    <br/>
 
     <% Like.where(project_id: proj.id).each do |like| %>
-    <br/>
+
+    <div class="open-conversation" data-proj_id="<%= proj.id %>" data-acc_id="<%= like.account_id %>">
+
     <%= Account.find(like.account_id).first_name %>
-    <% end %>
 
     <div class="d-inline-block">
       <i class="fa fa-comment text-success"></i>
     </div>
 
-  </div>
+    </div>
+
+    <% end %>
   <br/>
 <% end %>
 
@@ -22,7 +25,7 @@
 
 <strong>Liked Projects</strong></br>
 <% @likes.each do |like| %>
-  <div class="open-conversation" data-id="<%= like.project_id %>">
+  <div class="open-conversation" data-proj_id="<%= like.project_id %>" data-acc_id="<%= current_account.id %>">
 
     <%= Project.find(like.project_id).title %>
 
