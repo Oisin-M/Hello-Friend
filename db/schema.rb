@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_06_27_113419) do
   create_table "likes", force: :cascade do |t|
     t.integer "account_id", null: false
     t.integer "project_id"
-    t.boolean "boolean"
+    t.boolean "liked"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["account_id"], name: "index_likes_on_account_id"
