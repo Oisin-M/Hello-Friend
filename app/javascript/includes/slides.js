@@ -41,11 +41,8 @@ function goToSlide(action) {
 $(".open-conversation").on("click", function() {
 
   var project_id = $(this).data("proj_id");
-  console.log("proj");
-  console.log(project_id);
+
   var account_id = $(this).data("acc_id");
-  console.log("acc");
-  console.log(account_id);
 
   $.ajax({
     url: "/get_conversation/"+account_id+"-"+project_id,
