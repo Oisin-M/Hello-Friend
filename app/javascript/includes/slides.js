@@ -54,7 +54,6 @@ $(".open-project").on("click", function() {
 
   var project_id = $(this).data("id");
   console.log(project_id);
-  open_conversation;
   //
   // $.ajax({
   //   url: "/get/conversation/"+account_id,
