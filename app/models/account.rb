@@ -6,6 +6,7 @@ class Account < ApplicationRecord
   has_many_attached :images
   has_many :message
   has_many :likes
+  has_many :projects
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
