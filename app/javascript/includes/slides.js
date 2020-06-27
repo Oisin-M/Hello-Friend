@@ -5,7 +5,8 @@ var $activeSlide = $('#slides .slide:first-child');
 
 $activeSlide.addClass("showing");
 
-$("#decline").on"("click", function(){
+$("#decline").on("click", function(){
+  console.log("decline")
   goToSlide('decline');
 })
 
