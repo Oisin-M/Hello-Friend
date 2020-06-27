@@ -48,3 +48,66 @@
   left: 50%;
   transform: translate(-50%);
 }
+.typewriter {
+    font-family: Courier, monospace;
+	display: inline-block;
+
+}
+.typewriter-text {
+    color: green;
+    display: inline-block;
+  	overflow: hidden;
+  	letter-spacing: 2px;
+ 	animation: typing 3s steps(30, end), blink .75s step-end infinite;
+    white-space: nowrap;
+    font-size: 60px;
+    font-weight: 700;
+    border-right: 4px solid orange;
+    box-sizing: border-box;
+
+}
+
+#subtex{
+
+
+
+}
+@keyframes typing {
+    from {
+        width: 0%
+    }
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink {
+    from, to {
+        border-color: transparent
+    }
+    50% {
+        border-color: orange;
+    }
+
+}
+.inner{
+  margin-top: auto;
+  margin-bottom: 80px;
+
+}
+
+
+
+
+.fade-in {
+  animation: fadeIn ease 10s;
+
+}
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}

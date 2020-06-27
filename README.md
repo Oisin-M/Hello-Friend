@@ -3,34 +3,36 @@
 
 ## The To-Do List
 
-This will eventually be imported into the Projects part.
+This will eventually be imported into the Projects section on github.
 
 
 ### In Progress
 
-1. Setting up messageing between a project and a user. (Koff, imBOSible2)
-    1. tabs?
-    2. or spaces ?!?
-2. Editing the sign-up and Browse section. (BluBarry, pumpkineaters)
-3. Fixing the Projects section. (CKnight-)
+- [ ] Setting up messageing between a project and a user. (Koff, imBOSible2)
+    1. Make a Model
+- [ ] Editing the sign-up and Browse section. (BluBarry, pumpkineaters)
+- [ ] Fixing the Projects (i.e. to do list) section. (CKnight-)
 
 
 ### Unknown Importance / Progress Projects
-1. Match to projects and message projects not people
-2. Match Project's "Interest Category" to profject's "Category"
-3. Add/edit up to 5 projects (new model) (/project)
-4. Markdown in messages
-5. View Multiple projects, not accounts
-6. Refactor design: Homepage
-7. View/edit public profile details (new model? or part of devise) (/project)
+- [ ] Match to projects and message projects not people
+- [ ] Match Project's "Interest Category" to profject's "Category"
+- [ ] Add/edit up to 5 projects (new model) (/project)
+- [ ] Markdown in messages
+- [ ] View Multiple projects, not accounts
+- [ ] Refactor design: Homepage
+- [ ] View/edit public profile details (new model? or part of devise) (/project)
 
 
 
 #### Future (Important) 
-1. First Important project.
+- [ ] First Important project.
 
 #### Future (Not Important)
-1. First Unimportant project.
+- [ ] Report systems plus make users have to accept chat
+- [ ] Integrate with github
+- [ ] Add animation
+- [ ] Filter based off timezones, project sizes etc.
 
 
 
@@ -44,4 +46,13 @@ This will eventually be imported into the Projects part.
 ## Using our Site
 
 ### For Devs
-Running  ```rails db:seed```  will generate a number of seed accounts (details in db/seeds.rb) with emails set to all the devs email, and password as ```Password``` 
+Running  ```rails db:seed```  will generate a number of seed accounts (details in db/seeds.rb) with emails set to all the devs email, and password as ```Password``` `
+
+
+# About us
+## The Devs
+- [Oisín Morrison](email:o.morrison1@nuigalway.ie)
+- [Brian O'Sullivan](b.osullivan18@nuigalway.ie)
+- [Scott Murphy](s.murphy88@nuigalway.ie)
+- [Barry O'Donnell](b.odonnell@nuigalway.ie)
+- [Cormac Kavanagh](c.kavanagh26@nuigalway.ie)
