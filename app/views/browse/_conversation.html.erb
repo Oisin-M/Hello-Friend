@@ -16,7 +16,7 @@
       </div>
     <% end %>
 
-    <div id="conversation_messages"><%= render partial: "browse/messages" unless @conversation.new_record? %></div>
+    <div id="conversation_messages"><%= render partial: "browse/messages" if @conversation.new_record? %></div>
   </div>
 </div>
 <div class="row">
