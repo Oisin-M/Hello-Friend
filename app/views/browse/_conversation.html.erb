@@ -22,5 +22,17 @@
 <div class="row">
   <div class="col-12 mt-5 bottom-bar">
     <%= render partial: "browse/new_conversation" %>
+
+
+    <%= form_with model: @message do |form| %>
+      <div class="input-group">
+        <%= form.text_field :message, placeholder: "Enter your message and press send", class: "form-control form-control-lg" %>
+        <!-- <input type="text" name="message" value="" class="form-control" placeholder="Press send"> -->
+
+        <div class="input-group-append">
+          <input type="submit" name="submit" value="Send" class="btn btn-success">
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
