@@ -9,6 +9,8 @@ This will eventually be imported into the Projects part.
 ### In Progress
 
 1. Setting up messageing between a project and a user. (Koff, imBOSible2)
+    1. tabs?
+    2. or spaces ?!?
 2. Editing the sign-up and Browse section. (BluBarry, pumpkineaters)
 3. Fixing the Projects section. (CKnight-)
 
