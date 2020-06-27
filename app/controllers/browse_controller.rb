@@ -35,6 +35,8 @@ class BrowseController < ApplicationController
     @profile = Account.find(account_id)
     @liked_project = Project.find(project_id)
 
+    @our_project_bool = account_id.to_i==current_account.id.to_i
+
     like = Like.where(account_id: account_id).where(project_id: project_id)
 
     @like = like.first if like.present?
