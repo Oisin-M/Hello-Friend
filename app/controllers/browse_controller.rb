@@ -8,6 +8,12 @@ class BrowseController < ApplicationController
 
   def approve
     project_id = params[:id]
+
+    like=Like.new()
+
+    if like.save
+    end
+    
   end
 
   def decline
