@@ -15,9 +15,9 @@ Account.create([
   ])
 
 Project.create([
-  {account_id: 1, description: "A sample project by Scott", skills: "HTML", category: "Voluntary Computing"},
-  {account_id: 2, description: "A sample project by Brian", skills: "Ruby", category: "Voluntary Computing"},
-  {account_id: 3, description: "A sample project by Oisin", skills: "JS", category: "Voluntary Computing"},
-  {account_id: 4, description: "A sample project by Barry", skills: "CSS", category: "Voluntary Computing"},
-  {account_id: 5, description: "A sample project by Cormac", skills: "Bootstrap", category: "Voluntary Computing"},
+  {account_id: 1, title: "Project 1", description: "A sample project by Scott", skills: "HTML", category: "Voluntary Computing"},
+  {account_id: 2, title: "Project 2", description: "A sample project by Brian", skills: "Ruby", category: "Voluntary Computing"},
+  {account_id: 3, title: "Project 3", description: "A sample project by Oisin", skills: "JS", category: "Voluntary Computing"},
+  {account_id: 4, title: "Project 4", description: "A sample project by Barry", skills: "CSS", category: "Voluntary Computing"},
+  {account_id: 5, title: "Project 5", description: "A sample project by Cormac", skills: "Bootstrap", category: "Voluntary Computing"},
   ])
