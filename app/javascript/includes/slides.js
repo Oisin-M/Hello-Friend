@@ -50,6 +50,18 @@ $(".open-conversation").on("click", function() {
   // })
 });
 
+$(".open-project").on("click", function() {
+
+  var project_id = $(this).data("id");
+  console.log(project_id);
+  //
+  // $.ajax({
+  //   url: "/get/conversation/"+account_id,
+  //   method: "post",
+  //   dataType: "script"
+  // })
+});
+
 
 
 

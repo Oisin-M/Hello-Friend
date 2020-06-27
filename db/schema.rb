@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_27_155524) do
+ActiveRecord::Schema.define(version: 2020_06_27_191128) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "username", default: "", null: false
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
-    t.text "interests", default: "", null: false
-    t.text "skills", default: "", null: false
+    t.string "interests", default: "", null: false
+    t.string "skills", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -47,6 +47,16 @@ ActiveRecord::Schema.define(version: 2020_06_27_155524) do
     t.index ["account_id"], name: "index_likes_on_account_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.integer "conversation_id", null: false
+    t.integer "account_id", null: false
+    t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_messages_on_account_id"
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.integer "account_id", null: false
     t.text "description"
@@ -59,5 +69,7 @@ ActiveRecord::Schema.define(version: 2020_06_27_155524) do
   end
 
   add_foreign_key "likes", "accounts"
+  add_foreign_key "messages", "accounts"
+  add_foreign_key "messages", "conversations"
   add_foreign_key "projects", "accounts"
 end

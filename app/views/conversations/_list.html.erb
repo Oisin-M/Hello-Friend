@@ -1,6 +1,6 @@
 <strong>Liked Projects</strong></br>
 <% @likes.each do |like| %>
-  <div class="open-conversation" data-id="<%= like.project_id %>">
+  <div class="open-project" data-id="<%= like.project_id %>">
 
     <%= Project.find(like.project_id).title %>
 
