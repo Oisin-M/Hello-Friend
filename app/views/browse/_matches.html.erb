@@ -1,1 +1,4 @@
-Test
+<% current_account.likes.each do |like| %>
+  <%= like %>
+  <%= current_account.id %>
+<% end %>
