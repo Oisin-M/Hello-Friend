@@ -47,22 +47,20 @@ $(".open-conversation").on("click", function() {
   console.log("acc");
   console.log(account_id);
 
-  //
-  // $.ajax({
-  //   url: "/get/conversation/"+account_id,
-  //   method: "post",
-  //   dataType: "script"
-  // })
+
+  $.ajax({
+    url: "/get_conversation/"+account_id+"-"+project_id,
+    method: "post",
+    dataType: "script"
+  })
+
 });
 
 $(".open-project").on("click", function() {
 
-  var project_id = $(this).data("proj_id");
+  var project_id = $(this).data("id");
   console.log("proj");
   console.log(project_id);
-  var account_id = $(this).data("acc_id");
-  console.log("acc");
-  console.log(account_id);
 
   //
   // $.ajax({
