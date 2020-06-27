@@ -47,7 +47,6 @@ $(".open-conversation").on("click", function() {
   console.log("acc");
   console.log(account_id);
 
-
   $.ajax({
     url: "/get_conversation/"+account_id+"-"+project_id,
     method: "post",
