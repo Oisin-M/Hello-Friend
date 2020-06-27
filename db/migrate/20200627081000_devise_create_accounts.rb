@@ -9,8 +9,8 @@ class DeviseCreateAccounts < ActiveRecord::Migration[6.0]
       t.string :username,            null: false, default: ""
       t.string :first_name,          null: false, default: ""
       t.string :last_name,           null: false, default: ""
-      t.hash :interests,             null: false, default: ""
-      t.hash :skills,                null: false, default: ""
+      t.array :interests,             null: false, default: ""
+      t.array :skills,                null: false, default: ""
       t.string :encrypted_password,  null: false, default: ""
 
       ## Recoverable
