@@ -1,4 +1,4 @@
-<img src=<%=asset_path('hello.PNG')%> width="300">
+
 
 <style>
   body {
@@ -7,8 +7,9 @@
 </style>
 
 <body id="signin" style="color:green" class="center" >
+  <img id="toptext" src=<%=asset_path('hello.PNG')%> width="500">
   <div style="color:green">
-    <h1>Sign up</h1>
+    <h1 id="signinthing" align=left>Sign up</h1>
   </div>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -61,3 +62,6 @@
     <% end %>
 </body>
 <%= render "devise/shared/links" %>
+<div>
+<img id="imagedragon" src=<%=asset_path('pickle.png')%> height="60">
+</div>
