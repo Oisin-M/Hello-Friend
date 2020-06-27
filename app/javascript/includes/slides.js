@@ -5,17 +5,25 @@ var $activeSlide = $('#slides .slide:first-child');
 
 $activeSlide.addClass("showing");
 
-function nextSlide() {
-    goToSlide(currentSlide+1);
-}
+$("#decline").on"("click", function(){
+  goToSlide('decline');
+})
 
-function previousSlide() {
-    goToSlide(currentSlide-1);
-}
+$("#decline").on"("click", function(){
+  goToSlide('approve');
+})
 
-function goToSlide(n) {
-  slides[currentSlide].className = 'slide';
-  currentSlide = (n+slides.length)%slides.length;
-  slides[currentSlide].className = 'slide showing';
+function goToSlide(action) {
+  $activeSlide.removeClass("showing");
+  $activeSlide = $activeSlide.next(".slide");
+
+  //send data to controller
+  if( action == "approve"){
+
+  } else {
+
+  }
+
+  $activeSlide.next(".slide").addClass("showing");
 }
 });
