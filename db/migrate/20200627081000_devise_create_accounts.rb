@@ -4,7 +4,13 @@ class DeviseCreateAccounts < ActiveRecord::Migration[6.0]
   def change
     create_table :accounts do |t|
       ## Database authenticatable
+      # User Account Details
       t.string :email,              null: false, default: ""
+      t.string :username,            null: false, default: ""
+      t.string :first_name,          null: false, default: ""
+      t.string :last_name,           null: false, default: ""
+      t.string :interests,           null: false, default: ""
+      t.string :skills,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable

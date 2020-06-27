@@ -1,0 +1,7 @@
+<!-- Browse Window -->
+
+<% @users.each_with_index do |user, index| %>
+<div class="well user-<%= index %>">
+  <p><%= user.first_name %></p>
+</div>
+<% end %>
