@@ -13,3 +13,11 @@ Account.create([
    {first_name: "Barry", last_name: "O'Donnell", username: "BluBarry", email: "B.ODonnell15@nuigalway.ie", interests: "Physics", skills: "The Cat In The Hat", password: "Password"},
    {first_name: "Cormac", last_name: "Kavanagh", username: "CKnight", email: "C.Kavanagh26@nuigalway.ie", interests: "Tea", skills: "Auditoring", password: "Password"}
   ])
+
+Project.create([
+  {account_id: 1, description: "A sample project by Scott", skills: "HTML", category: "Voluntary Computing"},
+  {account_id: 2, description: "A sample project by Brian", skills: "Ruby", category: "Voluntary Computing"},
+  {account_id: 3, description: "A sample project by Oisin", skills: "JS", category: "Voluntary Computing"},
+  {account_id: 4, description: "A sample project by Barry", skills: "CSS", category: "Voluntary Computing"},
+  {account_id: 5, description: "A sample project by Cormac", skills: "Bootstrap", category: "Voluntary Computing"},
+  ])
