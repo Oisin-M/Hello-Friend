@@ -19,7 +19,6 @@ these make the slideshow work
     width: 50%;
     height: 100%;
     opacity: 0;
-    z-index: 1;
     border-radius: 15px;
 
     -webkit-transition: opacity 1s;
@@ -36,7 +35,6 @@ these make the slideshow work
 
 .showing {
     opacity: 1;
-    z-index: 2;
 }
 /*
 non-essential styles:
