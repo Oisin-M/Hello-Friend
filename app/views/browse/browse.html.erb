@@ -32,13 +32,13 @@
       <div class="slide" style="color:white" data-id="<%= project.id %>">
         <li style="color:white"><%= project.title %></li>
         <div style="margin-top:20px">
-          <p style="font-size:60%"> Skill(s) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <%= project.skills %> </p>
+          <p style="font-size:60%; line-height:40px"> Skill(s) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <%= project.skills %> </p>
         </div>
         <div style="margin-top:20px">
-          <p style="font-size:60%"> Category &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <%= project.category %> </p>
+          <p style="font-size:60%; line-height:40px"> Category &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <%= project.category %> </p>
         </div>
         <div style="margin-top:20px">
-          <p style="font-size:60%"> Description &nbsp;&nbsp;: <%= project.description %> </p>
+          <p class="content" style="font-size:60%; line-height:40px; text-overflow: ellipsis"> Description &nbsp;&nbsp;: <%= project.description %> </p>
         </div>
       </div>
       <% end %>
