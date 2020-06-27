@@ -27,6 +27,7 @@
     </div>
   </div>
   <div class="col-9 col-md-8" style="margin-top:50px">
+
     <ul id="slides">
       <% @reccommended_projects.each do |project| %>
       <div class="slide " style="color:white" data-id="<%= project.id %>">
@@ -53,14 +54,15 @@
           <i class="fa fa-heart fa-stack-1x text-success"></i>
         </div>
     </ul>
+
+    <!-- dont delete! -->
+    <div class="container">
+    <div id="conversation"></div>
+    </div>
+
     </div>
 </div>
 
 <div>
 <img id="logo" src=<%=asset_path('hello.PNG')%> height="60">
-</div>
-
-<!-- dont delete! -->
-<div class="container">
-<div id="conversation"></div>
 </div>
