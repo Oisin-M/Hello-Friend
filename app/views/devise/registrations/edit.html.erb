@@ -1,11 +1,11 @@
-<div class="center"><img  src=<%=asset_path('hello.PNG')%> width="300">
+<div class="center topper"><img  src=<%=asset_path('hello.PNG')%> width="300">
 <style>
   body {
   background:#171717;
 }
 </style>
 
-<h2 id="topper" style="color:white">Edit <%= resource_name.to_s.humanize %></h2>
+<h2 style="color:white">Edit <%= resource_name.to_s.humanize %></h2>
 <body class="center">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
