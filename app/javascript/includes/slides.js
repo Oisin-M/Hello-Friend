@@ -1,5 +1,8 @@
 // JS for Slides in Browse
 $(function(){
+
+
+
 var slides = document.querySelectorAll('#slides .slide');
 var $activeSlide = $('#slides .slide:first-child');
 
@@ -34,17 +37,20 @@ function goToSlide(action) {
   $activeSlide = $activeSlide.next(".slide");
   $activeSlide.addClass("showing");
 }
-});
 
+$(".open-conversation").on("click", function() {
 
-$("#message").on("click", function() {
-
-  console.log("click");
-  // var project_id = $(".open-conversation").data("id");
+  var project_id = $(this).data("id");
+  console.log(project_id);
   //
   // $.ajax({
   //   url: "/get/conversation/"+account_id,
   //   method: "post",
   //   dataType: "script"
   // })
+});
+
+
+
+
 });
