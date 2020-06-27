@@ -15,10 +15,17 @@ class BrowseController < ApplicationController
 
   end
 
+  def create_conversation(project_id)
+
+    conversation=Conversation.new(account_ID: current_account.id, project_id: project_id)
+
+  end
+
   def approve
     project_id = params[:id]
 
     like=Like.new(account_id: current_account.id, project_id: project_id.to_i, liked: true)
+    create_conversation(project_id.to_i)
 
     if like.save
 
@@ -41,7 +48,7 @@ class BrowseController < ApplicationController
 
   end
 
-//  def open_conversation
+
 
 
 end
