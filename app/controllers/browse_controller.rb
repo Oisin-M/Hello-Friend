@@ -3,7 +3,7 @@ class BrowseController < ApplicationController
   # Browse method when browse page entered
   def browse
     # Load in users
-    @users = Accoun.all
+    @users = Account.all
   end
 
 end
