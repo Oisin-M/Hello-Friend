@@ -3,7 +3,7 @@ class BrowseController < ApplicationController
   # Browse method when browse page entered
   def browse
     # Load in project
-    @projects = Project.all
+    @projects = Project.where.not(account_id: current_account)
   end
 
   def approve
