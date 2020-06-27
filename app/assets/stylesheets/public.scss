@@ -6,14 +6,16 @@ body {
 .bottom{
   margin: 500px 0 0 0;
       color: green;
-
+.column {
+        float: left;
+        width: 33.33%;
+        padding: 100px;
+          width: 200px;
+      }
 }
-img{
-  width: 200px;
-  margin-left: 150px;
-  color: green;
-  filter: invert(100%) blur(1px) color(green);
-
+.imgContainer{
+    float:left;
+    padding: 100px;
 }
 .center {
   margin: 0;
