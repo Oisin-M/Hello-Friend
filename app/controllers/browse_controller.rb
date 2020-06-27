@@ -4,6 +4,7 @@ class BrowseController < ApplicationController
   def browse
     # Load in project
     @projects = Project.where.not(account_id: current_account)
+    
   end
 
   def approve
