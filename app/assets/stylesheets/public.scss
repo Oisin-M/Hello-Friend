@@ -8,6 +8,13 @@ body {
       color: green;
 
 }
+img{
+  width: 200px;
+  margin-left: 150px;
+  color: green;
+  filter: invert(100%) blur(1px) color(green);
+
+}
 .center {
   margin: 0;
   position: absolute;
