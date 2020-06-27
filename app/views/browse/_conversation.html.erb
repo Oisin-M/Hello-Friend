@@ -29,6 +29,7 @@
       <%= form.hidden_field :proj_id, value: @liked_project.id %>
       <div class="input-group">
         <%= form.fields_for :messages, @message do |message_form| %>
+          <%= message_form.hidden_field :account_id, value: current_account.id %>
           <%= message_form.text_field :body, placeholder: "Enter your message and press send", class: "form-control form-control-lg" %>
           <!-- <input type="text" name="message" value="" class="form-control" placeholder="Press send"> -->
         <% end %>

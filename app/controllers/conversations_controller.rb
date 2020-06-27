@@ -13,7 +13,18 @@ def create
 end
 
 def update
+  @conversation = Conversation.find(params[:id])
 
+  respond_to do |format|
+    format.js {
+      if @conversation.update(conversation_params)
+        @messages = @conversation.messages
+        render "browse/conversation_messages"
+      else
+
+      end
+    }
+  end
 end
 
 private

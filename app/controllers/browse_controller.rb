@@ -51,6 +51,7 @@ class BrowseController < ApplicationController
     #
     # end
 
+    # @messages = @conversation.messages if @conversation.persisted?
     @message = @conversation.messages.build
 
     if @profile.present?
