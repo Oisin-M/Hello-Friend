@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :account_id %>
-    <%= form.text_field :account_id %>
+    <%= form.text_field :account_id, :value => current_account.id, :readonly => true %>
   </div>
 
   <div class="field">
