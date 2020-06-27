@@ -3,6 +3,7 @@ class BrowseController < ApplicationController
   # Browse method when browse page entered
   def browse
     # Load in project
+    redirect_to account_session_path unless account_signed_in?
     @projects = Project.where.not(account_id: current_account)
     @my_projects = Project.where(account_id: current_account)
     @seen = Like.where(account_id: current_account)
