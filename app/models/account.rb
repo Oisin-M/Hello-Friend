@@ -5,6 +5,7 @@ class Account < ApplicationRecord
   #Accounts are able to have multiple images
   has_many_attached :images
   has_many :message
+  has_many :likes
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
