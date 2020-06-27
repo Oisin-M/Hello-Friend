@@ -3,14 +3,16 @@ body {
     /*overflow-x: hidden;  Hide horizontal scrollbar */
     background: linear-gradient(to bottom, #171717 0%, #171717 0%);
 }
-
+.bottom{
+  margin: 700px 0 0 0;
+      color: green;
 .column {
         float: left;
         width: 33.33%;
         padding: 100px;
           width: 200px;
       }
-
+}
 .imgContainer{
     float:left;
     justify-content: center;
