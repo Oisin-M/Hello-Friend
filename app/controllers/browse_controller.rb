@@ -6,4 +6,10 @@ class BrowseController < ApplicationController
     @projects = Project.all
   end
 
+  def approve
+  end
+
+  def decline
+  end
+
 end

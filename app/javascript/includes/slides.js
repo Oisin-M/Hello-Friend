@@ -5,15 +5,29 @@ var $activeSlide = $('#slides .slide:first-child');
 
 $activeSlide.addClass("showing");
 
-$("#approve").on("click", function(){
-  //console.log("approve");
-  goToSlide('approve');
-})
+$("#decline").on("click", function() {
+  var user_id=$activeSlide.data("id");
 
-$("#decline").on("click", function(){
-  //console.log("decline");
+  $.ajax({
+    url: "/decline/"+user_id,
+    method: "post",
+    dataType: "ajax"
+  })
+
   goToSlide('decline');
-})
+});
+
+$("#approve").on("click", function() {
+  var user_id=$activeSlide.data("id");
+
+  $.ajax({
+    url: "/approve/"+user_id,
+    method: "post",
+    dataType: "ajax"
+  })
+
+  goToSlide('approve');
+});
 
 function goToSlide(action) {
   $activeSlide.removeClass("showing");

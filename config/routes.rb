@@ -8,4 +8,7 @@ Rails.application.routes.draw do
 
   root to: "public#home"
 
+  post "/approve/:id" => "browse#approve", as: :approve_profile
+  post "/decline/:id" => "browse#decline", as: :decline_profile
+
 end
