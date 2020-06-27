@@ -1,5 +1,5 @@
 // JS for Slides in Browse
-
+$(function(){
 var slides = document.querySelectorAll('#slides .slide');
 var $activeSlide = $('#slides .slide:first-child');
 
@@ -24,6 +24,6 @@ function goToSlide(action) {
 
   }
 
-  $activeSlide.next(".slide").addClass("showing");
+  $activeSlide.addClass("showing");
 }
 });

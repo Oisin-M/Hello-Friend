@@ -1,7 +1,7 @@
 <!-- Browse Window -->
 <ul id="slides">
   <% @projects.each do |project| %>
-  <div class="slide showing" data-id="<%= project.description %>">
+  <div class="slide showing" data-id="<%= project.title %>">
     <li style="color:white"><%= project %></li>
   </div>
   <% end %>
