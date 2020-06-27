@@ -1,23 +1,29 @@
-<body class="centerS">
+<style>
+  body {
+  background:#171717;
+}
+</style>
+
+<body style="margin-top:10%; ">
     <div class="text-center cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
         <div class="inner">
+          <div class="typewriter">
+            <div class="typewriter-text" style = "font-family:georgia,garamond,serif">{ Hello, friend! }</div>
+          </div>
+          <p id="subtex" class="fade-in" style="color:white;font-size:15px">Welcome!</p>
+          <p class="fade-in">
+            <a style="color:white;" href="accounts/sign_up" class="btn btn-lg btn-secondary">Sign up</a>
+          </p>
+          <p class="fade-in">
+            <a style="text-decoration:underline; color:darkgreen;" href="accounts/sign_in">Sign in</a>
+          </p>
 
 
     </div>
   </header>
 
   <main role="main" class="inner cover center">
-    <div class="typewriter">
-      <div class="typewriter-text" style = "font-family:georgia,garamond,serif">{ Hello, friend! }</div>
-    </div>
-    <p id="subtex" class="fade-in" style="color:white;font-size:15px">Welcome!</p>
-    <p class="fade-in">
-      <a style="color:white;" href="accounts/sign_up" class="btn btn-lg btn-secondary">Sign up</a>
-    </p>
-    <p class="fade-in">
-      <a style="text-decoration:underline; color:darkgreen;" href="accounts/sign_in">Sign in</a>
-    </p>
     <!--
     <p class="fade-in">
       <a style="text-decoration:underline; color:white">More info</a>
@@ -27,11 +33,11 @@
 
 </body>
 
-<div class="fade-in image123 container" style="margin-top:23%">
+<div class="fade-in image123 container">
 
 
 
-<div class="bottom image123 container" style="margin-top:10%">
+<div class="main image123 container" style="margin-top:10%">
 
     <div class="imgContainer" style="color:#b8b8b8">
         <img src=<%=asset_path('com.png')%>/ height="200" width="200"/>
