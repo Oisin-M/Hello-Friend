@@ -27,10 +27,12 @@
 }
 
 #imagedragon{
-  width:400px;
-  height:400px;
+  width:200px;
+  height:200px;
   position: absolute;
-  margin: 200px 300px 0;
+  margin: 300px 300px 0;
+  filter: brightness(1.2);
+  filter: saturate(2);
 }
 
 .center {
