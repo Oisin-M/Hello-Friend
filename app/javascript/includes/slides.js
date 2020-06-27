@@ -35,3 +35,16 @@ function goToSlide(action) {
   $activeSlide.addClass("showing");
 }
 });
+
+
+$("#message").on("click", function() {
+
+  console.log("click");
+  // var project_id = $(".open-conversation").data("id");
+  //
+  // $.ajax({
+  //   url: "/get/conversation/"+account_id,
+  //   method: "post",
+  //   dataType: "script"
+  // })
+});

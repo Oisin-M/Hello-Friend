@@ -1,24 +1,34 @@
-# README
+# This is the Title of the README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## The To-Do List
 
-* Ruby version
+This will eventually be imported into the Projects part.
 
-* System dependencies
 
-* Configuration
+### In Progress
 
-* Database creation
+1. Setting up messageing between a project and a user. (Koff, imBOSible2)
+2. Editing the sign-up and Browse section. (BluBarry, pumpkineaters)
+3. Fixing the Projects section. (CKnight-)
 
-* Database initialization
 
-* How to run the test suite
+#### Future (Important) 
+1. First Important project.
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Future (Not Important)
+1. First Unimportant project.
 
-* Deployment instructions
 
-* ...
+
+
+
+## Description of the Project
+
+{ Hello, friend! } is a revolutionary new project; aiming to unite programming abilities around the wolrd with new and exciting projects. We have taken inspiration from matchmaking sites such as Tinder, and initally built a clone website useing this [tutorial](https://www.youtube.com/watch?v=P5gAaZq-sPs&list=PLtZ8UuFjvnDfqEJ4EQytX4x3Uxwb7i7F7) series.
+
+
+## Using our Site
+
+### For Devs
+run ```rails db:seed```
