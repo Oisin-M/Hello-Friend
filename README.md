@@ -1,40 +1,23 @@
 # This is the Title of the README
 
+## Bulletin Board
+
+List any notes of import here
+
+#### Important
+
+- Working on x and y | Cormac 
+
+#### Updates
+
+
+#### Not Immediate
 
 ## The To-Do List
 
-This will eventually be imported into the Projects section on github.
+Please use the Projects section. When starting a project, either create it in the In Progress colomn, or move one from the pool. If you finish it **or** abandon it, move to the respective colomn. 
 
-
-### In Progress
-
-- [ ] Setting up messageing between a project and a user. (Koff, imBOSible2)
-    1. Make a Model
-- [ ] Editing the sign-up and Browse section. (BluBarry, pumpkineaters)
-- [ ] Fixing the Projects (i.e. to do list) section. (CKnight-)
-
-
-### Unknown Importance / Progress Projects
-- [ ] Match to projects and message projects not people
-- [ ] Match Project's "Interest Category" to profject's "Category"
-- [ ] Add/edit up to 5 projects (new model) (/project)
-- [ ] Markdown in messages
-- [ ] View Multiple projects, not accounts
-- [ ] Refactor design: Homepage
-- [ ] View/edit public profile details (new model? or part of devise) (/project)
-
-
-
-#### Future (Important) 
-- [ ] First Important project.
-
-#### Future (Not Important)
-- [ ] Report systems plus make users have to accept chat
-- [ ] Integrate with github
-- [ ] Add animation
-- [ ] Filter based off timezones, project sizes etc.
-
-
+Add any progress notes to the bulliten board above when necessary.
 
 
 
@@ -50,9 +33,12 @@ Running  ```rails db:seed```  will generate a number of seed accounts (details i
 
 
 # About us
+
+Created for the CERN Webfest 2020.
+
 ## The Devs
-- [Oisín Morrison](email:o.morrison1@nuigalway.ie)
-- [Brian O'Sullivan](b.osullivan18@nuigalway.ie)
-- [Scott Murphy](s.murphy88@nuigalway.ie)
-- [Barry O'Donnell](b.odonnell@nuigalway.ie)
-- [Cormac Kavanagh](c.kavanagh26@nuigalway.ie)
+- Oisín Morrison <o.morrison1@nuigalway.ie> [Github](https://github.com/Oisin-M/)
+- Brian O'Sullivan <b.osullivan18@nuigalway.ie> [Github](https://github.com/BrianOSullivan-2000)
+- Scott Murphy <s.murphy88@nuigalway.ie> [Github](https://github.com/ScottMurf)
+- Barry O'Donnell <b.odonnell15@nuigalway.ie> [Github](https://github.com/BarryOD4)
+- Cormac Kavanagh <c.kavanagh26@nuigalway.ie> [Github](https://github.com/CKnight7663)
