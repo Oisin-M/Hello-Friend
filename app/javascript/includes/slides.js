@@ -5,13 +5,14 @@ var $activeSlide = $('#slides .slide:first-child');
 
 $activeSlide.addClass("showing");
 
-$("#decline").on("click", function(){
-  console.log("decline")
-  goToSlide('decline');
+$("#approve").on("click", function(){
+  console.log("approve");
+  goToSlide('approve');
 })
 
-$("#decline").on"("click", function(){
-  goToSlide('approve');
+$("#decline").on("click", function(){
+  console.log("decline");
+  goToSlide('decline');
 })
 
 function goToSlide(action) {
