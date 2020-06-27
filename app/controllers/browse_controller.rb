@@ -43,7 +43,7 @@ class BrowseController < ApplicationController
 
     conversation = Conversation.where(acc_id: account_id, proj_id: project_id)
 
-    @conversation = conversation.size > 0 ? conversation.first : Conversation.new(acc_id: account_id, proj_id: project_id)
+    @conversation = conversation.size > 0 ? conversation.first : Conversation.new
 
     # if @conversation.save
     #

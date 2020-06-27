@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources "conversations" do
-    resources "messages"
-  end
+  # resources "conversations" do
+  #   resources "messages"
+  # end
 
   resources :projects
   devise_for :accounts
