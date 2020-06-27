@@ -9,10 +9,10 @@ var $activeSlide = $('#slides .slide:first-child');
 $activeSlide.addClass("showing");
 
 $("#decline").on("click", function() {
-  var user_id=$activeSlide.data("id");
+  var project_id=$activeSlide.data("id");
 
   $.ajax({
-    url: "/decline/"+user_id,
+    url: "/decline/"+project_id,
     method: "post",
     dataType: "ajax"
   })
@@ -21,10 +21,10 @@ $("#decline").on("click", function() {
 });
 
 $("#approve").on("click", function() {
-  var user_id=$activeSlide.data("id");
+  var project_id=$activeSlide.data("id");
 
   $.ajax({
-    url: "/approve/"+user_id,
+    url: "/approve/"+project_id,
     method: "post",
     dataType: "ajax"
   })
