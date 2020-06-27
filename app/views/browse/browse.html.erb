@@ -31,20 +31,29 @@
       <% @reccommended_projects.each do |project| %>
       <div class="slide" style="color:white" data-id="<%= project.id %>">
         <li style="color:white"><%= project.title %></li>
+        <div style="margin-top:20px">
+          <p style="font-size:60%"> Skill(s) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <%= project.skills %> </p>
+        </div>
+        <div style="margin-top:20px">
+          <p style="font-size:60%"> Category &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <%= project.category %> </p>
+        </div>
+        <div style="margin-top:20px">
+          <p style="font-size:60%"> Description &nbsp;&nbsp;: <%= project.description %> </p>
+        </div>
       </div>
       <% end %>
+      <div id="slide-controls" style="z-index:3">
+        <div id="decline" class="d-inline-block fa-stack fa-2x">
+          <i class="fa fa-circle fa-stack-2x text-white"></i>
+          <i class="fa fa-times fa-stack-1x text-danger"></i>
+        </div>
+        <div id="approve" class="d-inline-block fa-stack fa-2x">
+          <i class="fa fa-circle fa-stack-2x text-white"></i>
+          <i class="fa fa-heart fa-stack-1x text-success"></i>
+        </div>
     </ul>
 
 
-    <div id="slide-controls">
-      <div id="decline" class="d-inline-block fa-stack fa-2x">
-        <i class="fa fa-circle fa-stack-2x text-white"></i>
-        <i class="fa fa-times fa-stack-1x text-danger"></i>
-      </div>
-      <div id="approve" class="d-inline-block fa-stack fa-2x">
-        <i class="fa fa-circle fa-stack-2x text-white"></i>
-        <i class="fa fa-heart fa-stack-1x text-success"></i>
-      </div>
     </div>
   </div>
 </div>

@@ -9,6 +9,7 @@ these make the slideshow work
     padding: 0px;
     margin: 0px;
     list-style-type: none;
+
 }
 
 .slide {
@@ -19,6 +20,7 @@ these make the slideshow work
     height: 100%;
     opacity: 0;
     z-index: 1;
+    border-radius: 15px;
 
     -webkit-transition: opacity 1s;
     -moz-transition: opacity 1s;
