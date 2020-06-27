@@ -7,9 +7,11 @@ class BrowseController < ApplicationController
   end
 
   def approve
+    project_id = params[:id]
   end
 
   def decline
+    project_id = params[:id]
   end
 
 end
