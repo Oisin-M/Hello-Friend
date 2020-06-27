@@ -11,7 +11,7 @@ class BrowseController < ApplicationController
     @seen.each do |like|
       @seen_projects.append(like.project_id)
     end
-    @reccomended_projects = @projects.where.not(id: @seen_projects)
+    @reccommended_projects = @projects.where.not(id: @seen_projects)
 
   end
 
