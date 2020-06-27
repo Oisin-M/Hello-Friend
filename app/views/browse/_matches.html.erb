@@ -2,7 +2,14 @@
 
 <% @my_projects.each do |proj| %>
   <div class="open-conversation" data-id="<%= proj.id %>">
+
     <%= proj.title %>
+
+    <div id="message" class="d-inline-block fa-stack fa-2x">
+      <i class="fa fa-circle fa-stack-2x text-white"></i>
+      <i class="fa fa-comment fa-stack-1x text-success"></i>
+    </div>
+
   </div>
   <br/>
 <% end %>
@@ -12,7 +19,14 @@
 <strong>Liked Projects</strong></br>
 <% @likes.each do |like| %>
   <div class="open-conversation" data-id="<%= like.project_id %>">
+
     <%= Project.find(like.project_id).title %>
+
+    <div id="message" class="d-inline-block fa-stack fa-2x">
+      <i class="fa fa-circle fa-stack-2x text-white"></i>
+      <i class="fa fa-comment fa-stack-1x text-success"></i>
+    </div>
+
   </div>
   <br/>
 <% end %>

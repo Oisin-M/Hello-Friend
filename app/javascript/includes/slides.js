@@ -37,12 +37,14 @@ function goToSlide(action) {
 });
 
 
-$(".open-conversation").on("click", function() {
-  var account_id = $(this).data("id");
+$("#message").on("click", function() {
 
-  $.ajax({
-    url: "/get/conversation/"+account_id,
-    method: "post",
-    dataType: "script"
-  })
+  console.log("click");
+  // var project_id = $(".open-conversation").data("id");
+  //
+  // $.ajax({
+  //   url: "/get/conversation/"+account_id,
+  //   method: "post",
+  //   dataType: "script"
+  // })
 });
