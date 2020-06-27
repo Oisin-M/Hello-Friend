@@ -6,8 +6,6 @@ class Conversation < ApplicationRecord
   validates_presence_of :acc_id, :proj_id
   validates_uniqueness_of :acc_id, :proj_id
 
-  scope :between, -> (sender_id, recipient_id) do
-    where("(sender_id = ? AND recipient_id = ?) OR (sender_id = ? AND recipient_id = ?)", sender_id, recipient_id, recipient_id, sender_id)
-  end
-  
+
+
 end
