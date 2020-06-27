@@ -7,6 +7,11 @@ class BrowseController < ApplicationController
     @my_projects = Project.where(account_id: current_account)
     @seen = Like.where(account_id: current_account)
     @likes = @seen.where(liked: true)
+    @seen_projects = []
+    @seen.each do |like|
+      @seen_projects.append(like.project_id)
+    end
+    @reccomended_projects = @projects.where.not(id: @seen_projects)
 
   end
 
