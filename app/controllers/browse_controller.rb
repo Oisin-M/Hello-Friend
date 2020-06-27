@@ -51,7 +51,7 @@ class BrowseController < ApplicationController
     #
     # end
 
-    # @message = @conversation.messages.build
+    @message = @conversation.messages.build
 
     if @profile.present?
       respond_to do |format|

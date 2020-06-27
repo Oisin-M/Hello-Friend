@@ -24,10 +24,14 @@
     <%= render partial: "browse/new_conversation" %>
 
 
-    <%= form_with model: @message do |form| %>
+    <%= form_with model: @conversation do |form| %>
+      <%= form.hidden_field :acc_id, value: @profile.id %>
+      <%= form.hidden_field :proj_id, value: @liked_project.id %>
       <div class="input-group">
-        <%= form.text_field :message, placeholder: "Enter your message and press send", class: "form-control form-control-lg" %>
-        <!-- <input type="text" name="message" value="" class="form-control" placeholder="Press send"> -->
+        <%= form.fields_for :messages, @message do |message_form| %>
+          <%= message_form.text_field :body, placeholder: "Enter your message and press send", class: "form-control form-control-lg" %>
+          <!-- <input type="text" name="message" value="" class="form-control" placeholder="Press send"> -->
+        <% end %>
 
         <div class="input-group-append">
           <input type="submit" name="submit" value="Send" class="btn btn-success">
