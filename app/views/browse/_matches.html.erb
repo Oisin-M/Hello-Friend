@@ -1,9 +1,8 @@
-<strong>My Projects</strong><br/>
+<h5>My Projects:</h5>
 
 <% @my_projects.each do |proj| %>
 
-    <div><%= proj.title %></div>
-    <br/>
+    <strong><%= proj.title %></strong>
 
     <% Like.where(project_id: proj.id).each do |like| %>
 
@@ -24,7 +23,7 @@
 <br/>
 
 <div id="liked_proj_msg">
-  <strong>Liked Projects</strong><br/>
+  <h5>Liked Projects:</h5>
   <% @likes.each do |like| %>
     <div class="open-conversation" data-proj_id="<%= like.project_id %>" data-acc_id="<%= current_account.id %>">
 
