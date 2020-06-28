@@ -12,7 +12,7 @@
 - [x] Show users a list of projects they have liked and users that have liked their projects
 - [x] Allow users to approve and decline projects
 - [x] Set up Conversation and Messages models
-- [x] Allow user to send messages
+- [x] Allow user to send/receive messages via a pop-up window
 - [x] Allow users to view projects they have matched with
 - [ ] Make projects only editable by the owners
 - [ ] Allow users to send markdown and MathJax in messages
