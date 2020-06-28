@@ -1,7 +1,7 @@
 <strong>My Projects</strong><br/>
-<div class="row ">
+
 <% @my_projects.each do |proj| %>
-  <div class="col-sm-3"
+
     <strong><%= proj.title %></strong>
     <br/>
 
@@ -11,24 +11,20 @@
 
     <%= Account.find(like.account_id).first_name %>
 
-      <div class="d-inline-block">
-        <i class="fa fa-comment text-success"></i>
-      </div>
+    <div class="d-inline-block">
+      <i class="fa fa-comment text-success"></i>
+    </div>
 
     </div>
 
     <% end %>
   <br/>
-  </div>
 <% end %>
-</div>
+
 <br/>
 
 <strong>Liked Projects</strong></br>
-<div class="row ">
 <% @likes.each do |like| %>
-<div class="col-sm-3"
-  <br /
   <div class="open-conversation" data-proj_id="<%= like.project_id %>" data-acc_id="<%= current_account.id %>">
 
     <%= Project.find(like.project_id).title %>
@@ -39,6 +35,4 @@
 
   </div>
   <br/>
-</div>
 <% end %>
-</div>

@@ -15,7 +15,6 @@ end
 
 def update
   @conversation = Conversation.find(params[:id])
-  @messages = @conversation.messages
 
 
   respond_to do |format|
