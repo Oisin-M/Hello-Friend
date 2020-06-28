@@ -1,20 +1,15 @@
-<% if Conversation.where(acc_id: @profile.id, proj_id: @liked_project.id).size==0 %>
-  <h> Conversation new </h>
-  <%= form_with model: @conversation do |form| %>
-    <%= form.hidden_field :acc_id, value: @profile.id %>
-    <%= form.hidden_field :proj_id, value: @liked_project.id %>
-    <div class="input-group">
-      <%= form.fields_for :messages, @message do |message_form| %>
-        <%= message_form.hidden_field :account_id, value: current_account.id %>
-        <%= message_form.text_field :body, placeholder: "Enter your message and press send", id: "message-input", class: "form-control form-control-lg" %>
-      <% end %>
+<%= form_with model: @conversation do |form| %>
+  <%= form.hidden_field :acc_id, value: @profile.id %>
+  <%= form.hidden_field :proj_id, value: @liked_project.id %>
+  <div class="input-group">
+    <%= form.fields_for :messages, @message do |message_form| %>
+      <%= message_form.hidden_field :account_id, value: current_account.id %>
+      <%= message_form.text_field :body, placeholder: "Enter your message and press send", id: "message-input", class: "form-control form-control-lg" %>
+    <% end %>
 
-      <div class="input-group-append">
-        <input type="submit" name="submit" value="Send" class="btn btn-success btn-lg pl-5 pr-5">
-      </div>
-
+    <div class="input-group-append">
+      <input type="submit" name="submit" value="Send" class="btn btn-success btn-lg pl-5 pr-5">
     </div>
-  <% end %>
-<% else %>
-<h> Conversation exists </h>
+
+  </div>
 <% end %>
