@@ -26,7 +26,8 @@
       </div>
     </div>
   </div>
-  <div class="col-9 col-md-8" style="margin-top:50px">
+  <div class="col-9 col-md-8" style="margin-top:0px;text-align:center;">
+    <img style="margin-left:-110px;" src=<%=asset_path('hello.PNG')%> height="60">
 
     <ul id="slides">
       <% @reccommended_projects.each do |project| %>
@@ -61,8 +62,4 @@
     </div>
 
     </div>
-</div>
-
-<div>
-<img id="logo" src=<%=asset_path('hello.PNG')%> height="60">
 </div>
