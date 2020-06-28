@@ -5,7 +5,7 @@
     <p class="text-muted mt-2">You have connected with <%= @liked_project.title %> on <%= @like.created_at.strftime("%d/%m/%Y") %>.</p>
 
     <% else %>
-    <p class="text-muted mt-2">You have connected with <%= @profile.first_name %> on <%= @like.created_at.strftime("%d/%m/%Y") %>.</p>
+    <p class="text-muted mt-2">You have connected with <%= @profile.username %> on <%= @like.created_at.strftime("%d/%m/%Y") %>.</p>
     <% end %>
   </div>
 </div>
