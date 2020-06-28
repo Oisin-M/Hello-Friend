@@ -18,6 +18,7 @@
 - [ ] Allow users to send markdown and MathJax in messages
 - [ ] Make view projects a popup on the browse page as opposed to a separate page
 - [ ] Have multiple choice fields for the account sign up
+- [ ] Integrate application with Github
 
 ## Using our Site
 
