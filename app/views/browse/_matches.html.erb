@@ -2,7 +2,7 @@
 
 <% @my_projects.each do |proj| %>
 
-    <strong><%= proj.title %></strong>
+    <div><%= proj.title %></div>
     <br/>
 
     <% Like.where(project_id: proj.id).each do |like| %>

@@ -4,7 +4,6 @@ class Conversation < ApplicationRecord
   accepts_nested_attributes_for :messages, allow_destroy: true
 
   validates_presence_of :acc_id, :proj_id
-  validates_uniqueness_of :acc_id, :proj_id
 
 
 
