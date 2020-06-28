@@ -77,6 +77,4 @@ class BrowseController < ApplicationController
     end
   end
 
-
-
 end
