@@ -2,4 +2,9 @@
 
 <%= render 'form', project: @project %>
 
-<%= link_to 'Projects', projects_path, class: "btn btn-outline-primary" %>
+<p>
+<%= link_to 'Projects', projects_path, class: "btn btn-outline-primary", style: "color:white" %>
+</p>
+<p>
+  <a <%= link_to 'Browse', browse_path, class: "btn btn-outline-success", style: "color:white" %></a>
+</p>

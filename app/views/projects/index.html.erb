@@ -31,9 +31,9 @@ table, th, td {
           <td><%= project.description %></td>
           <td><%= project.skills %></td>
           <td><%= project.category %></td>
-          <td><%= link_to 'Show', project, class: "btn btn-outline-info" %></td>
-          <td><%= link_to 'Edit', edit_project_path(project), class: "btn btn-outline-warning" %></td>
-          <td><%= link_to 'Delete', project, class: "btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', project, class: "btn btn-outline-info", style: "color:white" %></td>
+          <td><%= link_to 'Edit', edit_project_path(project), class: "btn btn-outline-warning", style: "color:white" %></td>
+          <td><%= link_to 'Delete', project, class: "btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' }, style: "color:white" %></td>
         </tr>
       <% end %>
     </tbody>
@@ -41,9 +41,9 @@ table, th, td {
 
   <br>
   <p>
-    <a style="color:white;" href="/projects/new" class="btn btn-outline-primary">New Project</a>
+    <%= link_to 'New Project', new_project_path, class: "btn btn-outline-primary", style: "color:white" %>
   </p>
   <p>
-    <%= link_to 'Back to Browsing', browse_path, class: "btn btn-outline-success" %>
+    <%= link_to 'Back to Browsing', browse_path, class: "btn btn-outline-success", style: "color:white" %>
   </p>
 </body>
