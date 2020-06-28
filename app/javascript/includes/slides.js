@@ -33,7 +33,8 @@ $("#approve").on("click", function() {
 
   goToSlide('approve');
 
-  location.reload();
+  setTimeout(
+  location.reload(), 500);
 
 });
 
@@ -54,6 +55,8 @@ $(".open-conversation").on("click", function() {
     method: "post",
     dataType: "script"
   })
+
+  // location.reload();
 
 });
 
