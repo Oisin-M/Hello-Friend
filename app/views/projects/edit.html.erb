@@ -3,5 +3,14 @@
 
 <%= render 'form', project: @project %>
 
+<p>
 <%= link_to 'Show', @project, class: "btn btn-outline-info" %>
+</p>
+
+<p>
 <%= link_to 'Projects', projects_path, class: "btn btn-outline-primary" %>
+</p>
+
+<p>
+  <%= link_to 'Browse', browse_path, class: "btn btn-outline-success", style: "color:white" %>
+</p>

@@ -23,7 +23,16 @@
     <%= @project.category %>
   </h4>
 
+  <p>
   <%= link_to 'Edit', edit_project_path(@project), class: "btn btn-outline-warning" %>
+  </p>
+
+  <p>
   <%= link_to 'Projects', projects_path, class: "btn btn-outline-primary" %>
+  </p>
+
+  <p>
+    <%= link_to 'Browse', browse_path, class: "btn btn-outline-success", style: "color:white" %>
+  </p>
 
 </body>
