@@ -26,13 +26,11 @@
   margin-top: 100px;
 }
 
-#imagedragon{
-  width:200px;
-  height:200px;
+#personicon{
+  filter:grayscale(1);
   position: absolute;
-  margin: -350px 500px 100px 0px;
-  filter: brightness(1.2);
-  filter: saturate(2);
+  margin-top: -350px;
+  margin-left: 300px;
 }
 
 .center {
