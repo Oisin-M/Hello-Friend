@@ -4,10 +4,17 @@
 
 List any notes of import here
 
+### Bug Report
+```
+Hello-Friend/app/views/browse/_matches.html.erb where line #30 raised: 
+Couldn't find Project with 'id'=0
+```
+I think its saing that when you run out of projects, it trys to run this like code with project '0', which it doesnt have an id for.
+
 #### Important
 
-- Working on x and y | Cormac 
-
+- [ ] This is suppppper impoortant.
+- [x] This is also important, but done. Progress.
 #### Updates
 
 
