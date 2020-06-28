@@ -6,8 +6,6 @@ List any notes of import here
 
 #### Important
 
-- Working on x and y | Cormac 
-
 #### Updates
 
 
