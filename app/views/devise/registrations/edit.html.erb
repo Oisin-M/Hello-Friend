@@ -67,7 +67,7 @@
   <% end %>
 
   <p>
-    <%= link_to  "Cancel my account", registration_path(resource_name), class: "btn btn-outline-danger", data: { confirm: "Are you sure?" }, method: :delete %>
+    <%= link_to  "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-outline-danger" %>
   </p>
   <p>
     <%= link_to 'Back to Browsing', browse_path, class: "btn btn-outline-success", style: "color:white" %>
