@@ -30,13 +30,15 @@
   </div>
 
   <div class="field" style="color:white">
-    <%= form.label :skills %><br />
-    <%= form.text_area :skills %>
+    <%= form.label :category %><br />
+    <%= form.select :category, [['Education','education'],['Facilitating Research','facilitating research'],['Hardware','hardware'],['Health','health'],['Humanitarian','humanitarian'],['Other','other'],['Volunteer Computing'],['Data Visualisation','data visualisation']],
+      {:multiple=>true} %>
   </div>
 
   <div class="field" style="color:white">
-    <%= form.label :category %><br />
-    <%= form.text_area :category %>
+    <%= form.label :skills %><br />
+    <%= form.select :skills, [['Python','python'],['JavaScript','javascript'],['C++','c++'],['C#','c#'],['CSS','css'],['HTML','html'],['Java','java'],['Ruby','ruby'],['Scratch','scratch']],
+      {:multiple=>true} %>
   </div>
 
   <div class="actions" style="color:white">
