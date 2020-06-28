@@ -27,12 +27,12 @@
     </div>
   </div>
   <div class="col-9 col-md-8" style="margin-top:0px;text-align:center;">
-    <img style="margin-left:-110px;" src=<%=asset_path('hello.PNG')%> height="60">
+    <img  src=<%=asset_path('hello.PNG')%> height="60">
 
     <ul id="slides">
       <% @reccommended_projects.each do |project| %>
-      <div class="slide " style="color:white;" data-id="<%= project.id %>">
-        <h1 class="font-weight-bolder" style="color:white;  font-size:50%;"><%= project.title %></h1>
+      <div class="slide " style="color:white; text-align:left" data-id="<%= project.id %>">
+        <h1 class="font-weight-bolder" style="color:white;  font-size:100%;"><%= project.title %></h1>
         <div style="margin-top:20px">
           <p style="font-size:40%; line-height:40px"> Skill(s) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <%= project.skills %> </p>
         </div>
