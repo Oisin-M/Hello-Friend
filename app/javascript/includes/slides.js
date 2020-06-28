@@ -22,6 +22,8 @@ $("#decline").on("click", function() {
 
 $("#approve").on("click", function() {
   var project_id=$activeSlide.data("id");
+  var acc_id=$activeSlide.data("acc_id");
+  var proj_name=$activeSlide.data("proj_name");
 
   $.ajax({
     url: "/approve/"+project_id,
@@ -30,6 +32,9 @@ $("#approve").on("click", function() {
   })
 
   goToSlide('approve');
+
+  location.reload();
+
 });
 
 function goToSlide(action) {
