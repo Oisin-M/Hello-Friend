@@ -11,33 +11,14 @@
         <p class="mt-3">You matched with <span><%= @profile.first_name %></span> <%= time_ago_in_words @like.created_at %> ago</p>
 
         <p>Send them a welcome message and make them smile :)</p>
-        <%= @our_project_bool %>
-        <%= @conversation.acc_id %>
       </div>
     <% end %>
 
-    <div id="conversation_messages"><%= render partial: "browse/messages" if @conversation.new_record? %></div>
+    <div id="conversation_messages"><%= render partial: "browse/messages" unless @conversation.new_record? %></div>
   </div>
 </div>
 <div class="row">
   <div class="col-12 mt-5 bottom-bar">
     <%= render partial: "browse/new_conversation" %>
-
-
-    <%= form_with model: @conversation do |form| %>
-      <%= form.hidden_field :acc_id, value: @profile.id %>
-      <%= form.hidden_field :proj_id, value: @liked_project.id %>
-      <div class="input-group">
-        <%= form.fields_for :messages, @message do |message_form| %>
-          <%= message_form.hidden_field :account_id, value: current_account.id %>
-          <%= message_form.text_field :body, placeholder: "Enter your message and press send", class: "form-control form-control-lg" %>
-          <!-- <input type="text" name="message" value="" class="form-control" placeholder="Press send"> -->
-        <% end %>
-
-        <div class="input-group-append">
-          <input type="submit" name="submit" value="Send" class="btn btn-success">
-        </div>
-      </div>
-    <% end %>
   </div>
 </div>

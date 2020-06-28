@@ -3,17 +3,19 @@ class ConversationsController < ApplicationController
 def create
   @conversation = Conversation.new(conversation_params)
   @conversation.messages.first.account_id = current_account.id
+  @messages = @conversation.messages
 
   if @conversation.save!
-    logger.debug "can save"
+
   else
-    logger.debug "can't save"
+
   end
 
 end
 
 def update
   @conversation = Conversation.find(params[:id])
+
 
   respond_to do |format|
     format.js {
