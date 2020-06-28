@@ -39,7 +39,7 @@ class BrowseController < ApplicationController
     else
 
     end
-    
+
   end
 
   def open_conversation
