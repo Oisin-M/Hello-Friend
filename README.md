@@ -14,10 +14,10 @@
 - [x] Set up Conversation and Messages models
 - [x] Allow user to send/receive messages via a pop-up window
 - [x] Allow users to view projects they have matched with
-- [ ] Make projects only editable by the owners
-- [ ] Allow users to send markdown and MathJax in messages
 - [ ] Make view projects a popup on the browse page as opposed to a separate page
 - [ ] Have multiple choice fields for the account sign up
+- [ ] Make projects only editable by the owners
+- [ ] Allow users to send markdown and MathJax in messages
 - [ ] Integrate application with Github
 
 ## Using our Site
