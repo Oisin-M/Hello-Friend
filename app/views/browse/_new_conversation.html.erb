@@ -1,5 +1,6 @@
 <h> It's Massive </h>
 
+<h> <%= @conversation.id %> </h>
 
 <%= form_with model: @conversation do |form| %>
   <%= form.hidden_field :acc_id, value: @profile.id %>
@@ -15,4 +16,5 @@
     </div>
 
   </div>
+
 <% end %>
