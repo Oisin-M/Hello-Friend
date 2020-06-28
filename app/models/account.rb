@@ -10,4 +10,7 @@ class Account < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         
+  validates :email, :password, :username, :first_name, :last_name, presence: true, on: :create
+  validates_uniqueness_of :username
 end
