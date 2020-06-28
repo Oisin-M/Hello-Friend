@@ -131,6 +131,15 @@ margin-top:50px;
     margin: 0;
   }
 }
+
+
 #bringdown{
   margin-top:150px;
+}
+
+.content {
+   display: -webkit-box;
+   -webkit-line-clamp: 5;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
 }
