@@ -1,37 +1,13 @@
-# This is the Title of the README
-
-## Bulletin Board
-
-List any notes of import here
-
-### Bug Report
-```
-Hello-Friend/app/views/browse/_matches.html.erb where line #30 raised: 
-Couldn't find Project with 'id'=0
-```
-I think its saing that when you run out of projects, it trys to run this like code with project '0', which it doesnt have an id for.
-
-#### Important
-
-- [ ] This is suppppper impoortant.
-- [x] This is also important, but done. Progress.
-#### Updates
-
-
-#### Not Immediate
-
-## The To-Do List
-
-Please use the Projects section. When starting a project, either create it in the In Progress colomn, or move one from the pool. If you finish it **or** abandon it, move to the respective colomn. 
-
-Add any progress notes to the bulliten board above when necessary.
-
-
+# { Hello, friend! }
 
 ## Description of the Project
 
-{ Hello, friend! } is a revolutionary new project; aiming to unite programming abilities around the wolrd with new and exciting projects. We have taken inspiration from matchmaking sites such as Tinder, and initally built a clone website useing this [tutorial](https://www.youtube.com/watch?v=P5gAaZq-sPs&list=PLtZ8UuFjvnDfqEJ4EQytX4x3Uxwb7i7F7) series.
+{ Hello, friend! } is a revolutionary new project; aiming to unite programming abilities around the wolrd with new and exciting projects. We have taken inspiration from matchmaking sites such as Tinder, and used this [tutorial](https://www.youtube.com/watch?v=P5gAaZq-sPs&list=PLtZ8UuFjvnDfqEJ4EQytX4x3Uxwb7i7F7) series as a reference.
 
+#### Tasks
+
+- [ ] This is suppppper impoortant.
+- [x] This is also important, but done. Progress.
 
 ## Using our Site
 
