@@ -33,8 +33,7 @@ $("#approve").on("click", function() {
 
   goToSlide('approve');
 
-  setTimeout(
-  location.reload(), 500);
+  location.reload()
 
 });
 
