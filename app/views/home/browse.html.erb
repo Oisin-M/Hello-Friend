@@ -1,7 +1,75 @@
 <h1>Browse</h1>
 
-<%= link_to "Sign out", destroy_account_session_path, method: :delete, class: "btn btn-secondary mr-2" %>
+<div class="container-fluid">
+  <div class="row">
 
-<%= link_to "Projects", projects_path, class: "btn mr-2" %>
-<%= link_to "Conversations", conversations_path, class: "btn mr-2" %>
-<%= link_to "Messages", messages_path, class: "btn" %>
+    <div class="col-3">
+
+      <div class="text-right">
+        <%= link_to "Sign out", destroy_account_session_path, method: :delete, class: "btn btn-secondary" %>
+      </div>
+
+      <div class="text-center">
+        <p>
+          <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle Liked Projects</a>
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle My Projects</button>
+          <!-- <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle Both Projects</button> -->
+        </p>
+      </div>
+
+      <div class="col">
+        <div class="row">
+          <div class="col-12">
+            <div class="collapse multi-collapse show" id="multiCollapseExample1">
+              <div class="card">
+                <div class="card-header">Liked Projects</div>
+                <div class="card-body">
+                  <h5 class="card-title">Project 1</h5>
+                  <p class="card-text">@Mary | Mary: Hi</p>
+                  <h5 class="card-title">Project 2</h5>
+                  <p class="card-text">@John | John: Hello</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="collapse multi-collapse show" id="multiCollapseExample2">
+              <div class="card">
+                <div class="card-header">My Projects</div>
+                <div class="card-body">
+                  <h5 class="card-title">Project 1</h5>
+                  <p class="card-text">@Jay | Jay: Hello</p>
+                  <p class="card-text">@Frank | You: Hello</p>
+                  <h5 class="card-title">Project 2</h5>
+                  <p class="card-text">@Jay | Jay: Hello</p>
+                  <p class="card-text">@Frank | You: Hello</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+    <div class="col-2"></div>
+
+    <div class="col-5">
+      <div class="card text-white bg-dark">
+        <div class="card-header">Project Idea</div>
+        <div class="card-body">
+          <h5 class="card-title">Description</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-2"></div>
+
+  </div>
+</div>
