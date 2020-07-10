@@ -1,2 +1,7 @@
-<h1>Home#browse</h1>
-<p>Find me in app/views/home/browse.html.erb</p>
+<h1>Browse</h1>
+
+<%= link_to "Sign out", destroy_account_session_path, method: :delete, class: "btn btn-secondary mr-2" %>
+
+<%= link_to "Projects", projects_path, class: "btn mr-2" %>
+<%= link_to "Conversations", conversations_path, class: "btn mr-2" %>
+<%= link_to "Messages", messages_path, class: "btn" %>
