@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/browse'
+  get 'home/index'
   resources :messages
   resources :conversations
   resources :projects
