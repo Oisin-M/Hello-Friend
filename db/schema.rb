@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_10_160114) do
+ActiveRecord::Schema.define(version: 2020_07_10_165011) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,4 +24,14 @@ ActiveRecord::Schema.define(version: 2020_07_10_160114) do
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
   end
 
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "account_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_projects_on_account_id"
+  end
+
+  add_foreign_key "projects", "accounts"
 end
