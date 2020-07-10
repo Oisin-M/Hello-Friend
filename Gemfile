@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.7'
 
 
 gem 'devise', '~> 4.7', '>= 4.7.2'
+gem 'redis', '~> 4.2', '>= 4.2.1'
 
 
 # Reduces boot times through caching; required in config/boot.rb
