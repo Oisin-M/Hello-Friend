@@ -47,7 +47,6 @@ class DeviseCreateAccounts < ActiveRecord::Migration[6.0]
     # add_index :accounts, :confirmation_token,   unique: true
     # add_index :accounts, :unlock_token,         unique: true
 
-    validates :email, :password, :username, :first_name, :last_name, presence: true, on: :create
-    validates_uniqueness_of :username
+
   end
 end
