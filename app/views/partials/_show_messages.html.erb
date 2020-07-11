@@ -1,0 +1,5 @@
+</br>
+<% @swipe.messages.each do |msg| %>
+  <%= msg.body %> - <%= Account.find(msg.account_id).email %>
+  </br>
+<% end %>

@@ -17,13 +17,11 @@
   </div>
 
   <div class="field">
-    <%= form.label :account_id %>
-    <%= form.text_field :account_id %>
+    <%= form.hidden_field :account_id, value: current_account.id %>
   </div>
 
   <div class="field">
-    <%= form.label :swipe_id %>
-    <%= form.text_field :swipe_id %>
+    <%= form.hidden_field :swipe_id, value: @swipe.id %>
   </div>
 
   <div class="actions">
