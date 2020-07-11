@@ -5,6 +5,6 @@ class HomeController < ApplicationController
   end
 
   def browse
-    @projects=Project.all #should be matched projects, not all of them but will do for now
+    @project=Project.first #get first suitable project
   end
 end

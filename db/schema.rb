@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_10_165359) do
+ActiveRecord::Schema.define(version: 2020_07_11_113027) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -52,9 +52,21 @@ ActiveRecord::Schema.define(version: 2020_07_10_165359) do
     t.index ["account_id"], name: "index_projects_on_account_id"
   end
 
+  create_table "swipes", force: :cascade do |t|
+    t.integer "account_id", null: false
+    t.integer "project_id", null: false
+    t.boolean "liked"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_swipes_on_account_id"
+    t.index ["project_id"], name: "index_swipes_on_project_id"
+  end
+
   add_foreign_key "conversations", "accounts"
   add_foreign_key "conversations", "projects"
   add_foreign_key "messages", "accounts"
   add_foreign_key "messages", "conversations"
   add_foreign_key "projects", "accounts"
+  add_foreign_key "swipes", "accounts"
+  add_foreign_key "swipes", "projects"
 end
