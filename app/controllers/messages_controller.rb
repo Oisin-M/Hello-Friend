@@ -27,6 +27,9 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
 
     @message.save
+
+    ActionCable.server.broadcast("conversation_channel_#{@message.swipe_id}", message: @message.body)
+
     redirect_to Swipe.find(@message.swipe_id)
 
     # respond_to do |format|
