@@ -1,0 +1,7 @@
+<div class="card text-white bg-dark">
+  <div class="card-header"><%= Account.find(@project_to_swipe.account_id).email %></div>
+  <div class="card-body">
+    <h5 class="card-title"><%= @project_to_swipe.title %></h5>
+    <p class="card-text"><%= @project_to_swipe.description %></p>
+  </div>
+</div>

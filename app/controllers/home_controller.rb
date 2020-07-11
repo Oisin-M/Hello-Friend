@@ -5,9 +5,9 @@ class HomeController < ApplicationController
   end
 
   def browse
-    @project=Project.first #get first suitable project
-    @my_projects=Project.where(account_id: current_account.id)
+    @project_to_swipe=Project.first #get first suitable project
 
+    @my_projects=Project.where(account_id: current_account.id)
     @seen = Swipe.where(account_id: current_account.id)
     @likes = @seen.where(liked: true)
     @liked_project_ids = []

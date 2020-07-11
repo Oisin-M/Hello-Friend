@@ -1,0 +1,12 @@
+<div class="card text-white bg-success">
+
+  <div class="card-header">
+    <%= Account.find(@project.account_id).email %>
+    <%= link_to "Back", browse_path, class: "float-right" %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= @project.title %></h5>
+    <p class="card-text"><%= @project.description %></p>
+  </div>
+</div>
+<%= link_to "Edit", edit_project_path(@project) %>
