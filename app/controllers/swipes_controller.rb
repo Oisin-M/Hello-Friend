@@ -59,7 +59,12 @@ class SwipesController < ApplicationController
 
 
     if @swipe.liked
-      ActionCable.server.broadcast("like_channel_#{Project.find(@swipe.project_id).account_id}", project_id: @swipe.project_id, account_id: @swipe.account_id)
+      ActionCable.server.broadcast("like_channel_#{Project.find(@swipe.project_id).account_id}",
+      project_id: @swipe.project_id,
+      account_id: @swipe.account_id,
+      email: Account.find(@swipe.account_id).email,
+      swipe_id: @swipe.id
+    )
     end
 
     render "home/browse" #might want to rethink this instead of reloading the page each time, maybe a js.erb template instead which shows next project?
