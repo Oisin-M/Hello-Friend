@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-header">Liked Projects</div>
+  <div class="card-body">
+    <% @liked_projects.each do |proj| %>
+    <h5 class="card-title"><%= proj.title %></h5>
+    <p class="card-text"><%= proj.account_id %> | Mary: Hi</p>
+    <% end %>
+  </div>
+</div>

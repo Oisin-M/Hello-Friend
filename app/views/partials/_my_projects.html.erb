@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-header">My Projects</div>
+  <div class="card-body">
+    <% @my_projects.each do |proj| %>
+    <h5 class="card-title"><%= proj.title %></h5>
+      <% Swipe.where(project_id: proj.id).where(liked: true).each do |like| %>
+      <p class="card-text"><%= like.account_id %> | Jay: Hello</p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
