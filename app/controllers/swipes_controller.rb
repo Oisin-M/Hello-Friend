@@ -28,11 +28,14 @@ class SwipesController < ApplicationController
   # POST /swipes.json
   def create
     @swipe = Swipe.new(swipe_params)
-    
+
     #could have this in show too
     @swipe.save
     @project = Project.find(4) #find the next project to display
-    render "home/browse"
+
+    ActionCable.server.broadcast("like_channel_#{Project.find(@swipe.project_id).account_id}", message: "test")
+
+    render "home/browse" #might want to rethink this instead of reloading the page each time
 
     # respond_to do |format|
     #   if @swipe.save
