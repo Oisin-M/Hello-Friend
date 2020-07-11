@@ -31,11 +31,26 @@ class SwipesController < ApplicationController
 
     #could have this in show too
     @swipe.save
+
+    #needed for browse template
     @project = Project.find(4) #find the next project to display
+    @my_projects=Project.where(account_id: current_account.id)
 
-    ActionCable.server.broadcast("like_channel_#{Project.find(@swipe.project_id).account_id}", message: "test")
+    @seen = Swipe.where(account_id: current_account.id)
+    @likes = @seen.where(liked: true)
+    @liked_project_ids = []
+    @likes.each do |like|
+      @liked_project_ids.append(like.project_id)
+    end
+    @liked_projects = Project.where(id: @liked_project_ids)
 
-    render "home/browse" #might want to rethink this instead of reloading the page each time
+
+
+    if @swipe.liked
+      ActionCable.server.broadcast("like_channel_#{Project.find(@swipe.project_id).account_id}", project_id: @swipe.project_id, account_id: @swipe.account_id)
+    end
+
+    render "home/browse" #might want to rethink this instead of reloading the page each time, maybe a js.erb template instead which shows next project?
 
     # respond_to do |format|
     #   if @swipe.save
