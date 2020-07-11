@@ -8,7 +8,7 @@ document.addEventListener('turbolinks:load', () => {
   consumer.subscriptions.create({ channel: "ConversationChannel", swipe_id: swipe_id}, {
     connected() {
       // Called when the subscription is ready for use on the server
-      console.log("connected to conversation channel "+swipe_id)
+      console.log("connected to conversation channel " + swipe_id)
     },
 
     disconnected() {
@@ -18,6 +18,11 @@ document.addEventListener('turbolinks:load', () => {
     received(data) {
       // Called when there's incoming data on the websocket for this channel
       console.log(data);
+      const message_div = document.getElementById("messages");
+      message_div.innerHTML+=data.message
+      message_div.innerHTML+=" - "
+      message_div.innerHTML+=data.sender
+      message_div.innerHTML+="</br>"
     }
   });
 

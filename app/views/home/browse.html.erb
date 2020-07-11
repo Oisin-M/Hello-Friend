@@ -53,7 +53,9 @@
       </div>
       <% elsif @swipe.present? %>
         Conversation should be here.
+        <div id="messages">
         <%= render "partials/show_messages" %>
+        </div>
         <%= render "partials/send_message_form", message: Message.new %>
       <% elsif @project.present? %>
         <%= render "partials/project" %>
