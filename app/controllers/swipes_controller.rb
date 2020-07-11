@@ -10,8 +10,9 @@ class SwipesController < ApplicationController
   # GET /swipes/1
   # GET /swipes/1.json
   def show
-    @project = Project.find(4) #find the next project to display
-    render "home/browse"
+    #might want this inside create instead of show
+    # @project = Project.find(4) #find the next project to display
+    # render "home/browse"
   end
 
   # GET /swipes/new
@@ -27,16 +28,21 @@ class SwipesController < ApplicationController
   # POST /swipes.json
   def create
     @swipe = Swipe.new(swipe_params)
+    
+    #could have this in show too
+    @swipe.save
+    @project = Project.find(4) #find the next project to display
+    render "home/browse"
 
-    respond_to do |format|
-      if @swipe.save
-        format.html { redirect_to @swipe, notice: 'Swipe was successfully created.' }
-        format.json { render :show, status: :created, location: @swipe }
-      else
-        format.html { render :new }
-        format.json { render json: @swipe.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @swipe.save
+    #     format.html { redirect_to @swipe, notice: 'Swipe was successfully created.' }
+    #     format.json { render :show, status: :created, location: @swipe }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @swipe.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /swipes/1
