@@ -1,4 +1,4 @@
-class SwipeChannel < ApplicationCable::Channel
+class LikeChannel < ApplicationCable::Channel
   def subscribed
     # stream_from "some_channel"
   end
