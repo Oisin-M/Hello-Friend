@@ -60,13 +60,15 @@
     <div class="col-2"></div>
 
     <div class="col-5">
+      <% @projects.each do |proj| %>
       <div class="card text-white bg-dark">
-        <div class="card-header">Project Idea</div>
+        <div class="card-header"><%= Account.find(proj.account_id).email %></div>
         <div class="card-body">
-          <h5 class="card-title">Description</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title"><%= proj.title %></h5>
+          <p class="card-text"><%= proj.description %></p>
         </div>
       </div>
+      <% end %>
     </div>
 
     <div class="col-2"></div>

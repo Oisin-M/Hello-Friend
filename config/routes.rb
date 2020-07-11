@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :swipes
   resources :messages
   resources :conversations
   resources :projects
