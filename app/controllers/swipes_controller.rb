@@ -10,6 +10,8 @@ class SwipesController < ApplicationController
   # GET /swipes/1
   # GET /swipes/1.json
   def show
+    @project = Project.find(4) #find the next project to display
+    render "home/browse"
   end
 
   # GET /swipes/new
