@@ -44,17 +44,25 @@ class SwipesController < ApplicationController
     #could have this in show too
     @swipe.save
 
-    #needed for browse template
-    @project_to_swipe = Project.find(4) #find the next project to display
+    # #needed for browse template
+    # @project_to_swipe = Project.find(4) #find the next project to display
 
     @my_projects=Project.where(account_id: current_account.id)
     @seen = Swipe.where(account_id: current_account.id)
     @likes = @seen.where(liked: true)
+    @seen_project_ids = []
+    @seen.each do |view|
+      @seen_project_ids.append(view.project_id)
+    end
     @liked_project_ids = []
     @likes.each do |like|
       @liked_project_ids.append(like.project_id)
     end
     @liked_projects = Project.where(id: @liked_project_ids)
+
+    @project_to_swipe = Project.where.not(id: @seen_project_ids).where.not(account_id: current_account.id).first
+
+    @no_projects_left="not null"
 
 
 

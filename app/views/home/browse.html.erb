@@ -51,6 +51,8 @@
       <%= render "partials/swipe_like", swipe: Swipe.new %>
       <%= render "partials/swipe_dislike", swipe: Swipe.new %>
       </div>
+      <% elsif @no_projects_left.present? %>
+        <%= render "partials/no_projects_left" %>
       <% elsif @swipe.present? %>
         <div id="messages">
         <%= render "partials/show_messages" %>
