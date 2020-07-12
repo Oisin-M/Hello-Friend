@@ -75,7 +75,8 @@ class SwipesController < ApplicationController
     )
     end
 
-    render "home/browse" #might want to rethink this instead of reloading the page each time, maybe a js.erb template instead which shows next project?
+    # render "home/browse" #URL is /swipes, might want to rethink that
+    redirect_to browse_path
 
     # respond_to do |format|
     #   if @swipe.save
