@@ -1,5 +1,14 @@
+<%= link_to "Back", browse_path, class: "float-right" %>
+
+<%= Project.find(@swipe.project_id).title %>
+<%= @swipe.account_id==current_account.id ? Account.find(Project.find(@swipe.project_id).account_id).email : Account.find(@swipe.account_id).email %>
+
 </br>
+<% if @swipe.messages.length==0 %>
+  <h6>No messages to display.</h6>
+<% else %>
 <% @swipe.messages.each do |msg| %>
   <%= msg.body %> - <%= Account.find(msg.account_id).email %>
   </br>
+<% end %>
 <% end %>
