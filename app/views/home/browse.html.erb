@@ -12,6 +12,8 @@
         <%= link_to "Sign out", destroy_account_session_path, method: :delete, class: "btn btn-secondary" %>
       </div>
 
+      <%= link_to "My Profile", current_account.profile %>
+
       <div class="text-center">
         <p>
           <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle Liked Projects</a>
