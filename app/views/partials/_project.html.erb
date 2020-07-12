@@ -9,4 +9,6 @@
     <p class="card-text"><%= @project.description %></p>
   </div>
 </div>
+<% if current_account.id==@project.account_id %>
 <%= link_to "Edit", edit_project_path(@project) %>
+<% end %>

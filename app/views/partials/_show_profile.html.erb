@@ -9,4 +9,6 @@
     <p class="card-text">(Other data would go here)</p>
   </div>
 </div>
-<%= link_to "Edit", edit_project_path(@profile) %>
+<% if current_account.id==@profile.account_id %>
+<%= link_to "Edit", edit_profile_path(@profile) %>
+<% end %>
