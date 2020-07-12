@@ -1,0 +1,46 @@
+<%= form_with(model: project, local: true) do |form| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+        <% project.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="card text-white bg-success">
+
+    <div class="card-header">
+      Create Project
+      <%= link_to "Back", browse_path, class: "float-right" %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Add a new project!</h5>
+      <p class="card-text">
+
+        <div class="field">
+          <%= form.label :title %>
+          <%= form.text_field :title %>
+        </div>
+
+        <div class="field">
+          <%= form.label :description %>
+          <%= form.text_area :description %>
+        </div>
+
+        <div class="field">
+          <%= form.hidden_field :account_id, value: current_account.id %>
+        </div>
+
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+
+    </p>
+  </div>
+</div>
+
+<% end %>

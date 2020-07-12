@@ -25,6 +25,21 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+
+
+    @my_projects=Project.where(account_id: current_account.id)
+    @seen = Swipe.where(account_id: current_account.id)
+    @likes = @seen.where(liked: true)
+    @liked_project_ids = []
+    @likes.each do |like|
+      @liked_project_ids.append(like.project_id)
+    end
+    @liked_projects = Project.where(id: @liked_project_ids)
+
+    @new_project="not null"
+
+    render "home/browse"
+
   end
 
   # GET /projects/1/edit
@@ -36,15 +51,19 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
 
-    respond_to do |format|
-      if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
-        format.json { render :show, status: :created, location: @project }
-      else
-        format.html { render :new }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
-      end
-    end
+    @project.save
+
+    redirect_to browse_path
+
+    # respond_to do |format|
+    #   if @project.save
+    #     format.html { redirect_to @project, notice: 'Project was successfully created.' }
+    #     format.json { render :show, status: :created, location: @project }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @project.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /projects/1
