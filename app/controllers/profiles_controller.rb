@@ -10,6 +10,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+
     @my_projects=Project.where(account_id: current_account.id)
     @seen = Swipe.where(account_id: current_account.id)
     @likes = @seen.where(liked: true)
