@@ -3,7 +3,19 @@
   <div class="card-body">
     <% @liked_projects.each do |proj| %>
     <h5 class="card-title"><%= link_to proj.title, proj %></h5>
-    <p class="card-text"><%= link_to Account.find(proj.account_id).email, Profile.find_by(account_id: proj.account_id) %> | Mary: Hi <%= link_to "Message", Swipe.find_by(project_id: proj.id, account_id: current_account.id) %></p>
+
+    <p class="card-text">
+      <%= link_to "@"+Account.find(proj.account_id).profile.name, Profile.find_by(account_id: proj.account_id) %> |
+       <span id=<%= "swipe"+ Swipe.find_by(project_id: proj.id, account_id: current_account.id).id.to_s %> >
+         <% if Swipe.find_by(project_id: proj.id, account_id: current_account.id).messages.last.nil? %>
+         No messages.
+         <% else %>
+           <%= Account.find(Swipe.find_by(project_id: proj.id, account_id: current_account.id).messages.last.account_id).profile.name %>
+           : <%= Swipe.find_by(project_id: proj.id, account_id: current_account.id).messages.last.body %>
+         <% end %>
+       </span>
+       <%= link_to "Message", Swipe.find_by(project_id: proj.id, account_id: current_account.id) %></p>
+
     <% end %>
   </div>
 </div>

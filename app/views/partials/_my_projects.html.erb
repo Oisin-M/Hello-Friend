@@ -2,10 +2,20 @@
   <div class="card-header">My Projects</div>
   <div class="card-body">
     <% @my_projects.each do |proj| %>
-    <div id=<%= proj.id %>>
+    <div id=<%= "proj"+ proj.id.to_s %>>
     <h5 class="card-title"><%= link_to proj.title, proj %></h5>
       <% Swipe.where(project_id: proj.id).where(liked: true).each do |like| %>
-      <p class="card-text"><%= link_to Account.find(like.account_id).email, Profile.find_by(account_id: like.account_id) %> | Jay: Hello <%= link_to "Message", Swipe.find_by(project_id: proj.id, account_id: like.account_id) %></p>
+      <p class="card-text">
+        <%= link_to "@"+Account.find(like.account_id).profile.name, Profile.find_by(account_id: like.account_id) %> |
+        <span id=<%= "swipe"+like.id.to_s %> >
+        <% if like.messages.last.nil? %>
+         No messages.
+         <% else %>
+           <%= Account.find(like.messages.last.account_id).profile.name %>
+           : <%= like.messages.last.body %>
+         <% end %>
+         </span>
+         <%= link_to "Message", Swipe.find_by(project_id: proj.id, account_id: like.account_id) %></p>
       <% end %>
     </div>
     <% end %>

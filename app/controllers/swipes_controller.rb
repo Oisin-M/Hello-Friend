@@ -69,8 +69,8 @@ class SwipesController < ApplicationController
     if @swipe.liked
       ActionCable.server.broadcast("like_channel_#{Project.find(@swipe.project_id).account_id}",
       project_id: @swipe.project_id,
-      account_id: @swipe.account_id,
-      email: Account.find(@swipe.account_id).email,
+      name: Account.find(@swipe.account_id).profile.name,
+      profile_id: Account.find(@swipe.account_id).profile.id,
       swipe_id: @swipe.id
     )
     end
