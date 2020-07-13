@@ -21,7 +21,7 @@ document.addEventListener('turbolinks:load', () => {
 
       var extra_html="<p class='card-text'>"
       extra_html+="<a href='/profiles/"+data.profile_id+"'>@"+data.name+"</a> | "
-      extra_html+="<span id="+data.swipe_id+">No messages. </span>"
+      extra_html+="<span id=swipe"+data.swipe_id+">No messages. </span>"
       extra_html+="<a href='/swipes/"+data.swipe_id+"'>Message</a></p>"
 
       my_project_conversations.innerHTML+=extra_html

@@ -30,8 +30,17 @@ class MessagesController < ApplicationController
 
     ActionCable.server.broadcast("conversation_channel_#{@message.swipe_id}",
       message: @message.body,
-      sender: Account.find(current_account.id).email,
+      sender: Account.find(current_account.id).profile.name,
+      email: Account.find(current_account.id).email,
       sender_id: current_account.id)
+
+    ActionCable.server.broadcast("sidebarconversations_channel",
+      message: @message.body,
+      sender: Account.find(current_account.id).profile.name,
+      swipe_id: @message.swipe_id,
+      acc_id1: Swipe.find(@message.swipe_id).account_id,
+      acc_id2: Project.find(Swipe.find(@message.swipe_id).project_id).account_id
+    )
 
     redirect_to Swipe.find(@message.swipe_id)
 

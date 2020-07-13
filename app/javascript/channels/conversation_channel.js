@@ -8,6 +8,10 @@ document.addEventListener('turbolinks:load', () => {
   const acc_element = document.getElementById('acc_id');
   const acc_id = acc_element.getAttribute('data-acc-id');
 
+  consumer.subscriptions.subscriptions.forEach((subscription) => {
+    consumer.subscriptions.remove(subscription)
+  })
+
   consumer.subscriptions.create({ channel: "ConversationChannel", swipe_id: swipe_id}, {
     connected() {
       // Called when the subscription is ready for use on the server
@@ -28,7 +32,7 @@ document.addEventListener('turbolinks:load', () => {
         const message_div = document.getElementById("messages");
         message_div.innerHTML+=data.message
         message_div.innerHTML+=" - "
-        message_div.innerHTML+=data.sender
+        message_div.innerHTML+=data.email
         message_div.innerHTML+="</br>"
       }
     }
