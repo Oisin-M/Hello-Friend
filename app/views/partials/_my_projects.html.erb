@@ -12,7 +12,7 @@
          No messages.
          <% else %>
            <%= Account.find(like.messages.last.account_id).profile.name %>
-           : <%= like.messages.last.body %>
+           : <%= markdown(like.messages.last.body) %>
          <% end %>
          </span>
          <%= link_to "Message", Swipe.find_by(project_id: proj.id, account_id: like.account_id) %></p>

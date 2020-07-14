@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  include ApplicationHelper #give me my markdown method
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   # GET /messages
@@ -29,13 +30,13 @@ class MessagesController < ApplicationController
     @message.save
 
     ActionCable.server.broadcast("conversation_channel_#{@message.swipe_id}",
-      message: @message.body,
+      message: markdown(@message.body),
       sender: Account.find(current_account.id).profile.name,
       email: Account.find(current_account.id).email,
       sender_id: current_account.id)
 
     ActionCable.server.broadcast("sidebarconversations_channel",
-      message: @message.body,
+      message: markdown(@message.body),
       sender: Account.find(current_account.id).profile.name,
       swipe_id: @message.swipe_id,
       acc_id1: Swipe.find(@message.swipe_id).account_id,

@@ -9,9 +9,9 @@
 <% else %>
 <% @swipe.messages.each do |msg| %>
   <% if msg.account_id==current_account.id %>
-  <strong><%= msg.body %> - <%= Account.find(msg.account_id).email %></strong>
+  <strong><%= markdown msg.body %> - <%= Account.find(msg.account_id).email %></strong>
   <% else %>
-  <%= msg.body %> - <%= Account.find(msg.account_id).email %>
+  <%= markdown msg.body %> - <%= Account.find(msg.account_id).email %>
   <% end %>
   </br>
 <% end %>
