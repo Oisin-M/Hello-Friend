@@ -8,12 +8,12 @@
       <p class="card-text">
         <%= link_to "@"+Account.find(like.account_id).profile.name, Profile.find_by(account_id: like.account_id) %> |
         <span id=<%= "swipe"+like.id.to_s %> >
-        <% if like.messages.last.nil? %>
-         No messages.
-         <% else %>
-           <%= Account.find(like.messages.last.account_id).profile.name %>
-           : <%= markdown(like.messages.last.body) %>
-         <% end %>
+          <% if like.messages.last.nil? %>
+           No messages.
+           <% else %>
+             <%= Account.find(like.messages.last.account_id).profile.name %>
+             : <%= markdown(like.messages.last.body) %>
+           <% end %>
          </span>
          <%= link_to "Message", Swipe.find_by(project_id: proj.id, account_id: like.account_id) %></p>
       <% end %>

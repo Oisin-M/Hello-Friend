@@ -22,7 +22,8 @@ document.addEventListener('turbolinks:load', () => {
       //might want to have separate sidebar channel for each account and then send data to those instead of just to everyone
       if (data.acc_id1==acc_id || data.acc_id2==acc_id) {
         const swipe_span = document.getElementById("swipe"+data.swipe_id);
-        swipe_span.innerHTML=data.sender+" : "+data.message
+        const html_to_add = data.sender+" : "+data.message;
+        swipe_span.innerHTML=html_to_add
       }
     }
   });
