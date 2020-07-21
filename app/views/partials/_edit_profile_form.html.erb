@@ -14,11 +14,11 @@
   <div class="card text-white bg-success">
 
     <div class="card-header">
-      Create Your Profile
+      Edit Your Profile
       <%= link_to "Back", browse_path, class: "float-right" %>
     </div>
     <div class="card-body">
-      <h5 class="card-title">You must do this to continue.</h5>
+      <h5 class="card-title">[text]</h5>
       <p class="card-text">
 
         <div class="field">
@@ -29,6 +29,15 @@
           <%= form.label :name %>
           <%= form.text_field :name %>
         </div>
+
+        <%= form.select(:skills, [['Python', 'Python'],
+                                  ['JavaScript', 'JavaScript'],
+                                  ['C#', 'C#'],
+                                  ['Ruby', 'Ruby'],
+                                  ['HTML', 'HTML']
+                                 ],{},
+                                   { :multiple => true }
+                                 ) %>
 
         <div class="actions">
           <%= form.submit %>
