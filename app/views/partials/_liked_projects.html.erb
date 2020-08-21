@@ -11,7 +11,7 @@
          No messages.
          <% else %>
            <%= Account.find(Swipe.find_by(project_id: proj.id, account_id: current_account.id).messages.last.account_id).profile.name %>
-           : <%= markdown(Swipe.find_by(project_id: proj.id, account_id: current_account.id).messages.last.body) %>
+          <%= markdown (" : "+Swipe.find_by(project_id: proj.id, account_id: current_account.id).messages.last.body[0..20].gsub('<br>', "").gsub('\\', '')) +'...' %>
          <% end %>
        </span>
        <%= link_to "Message", Swipe.find_by(project_id: proj.id, account_id: current_account.id) %></p>
