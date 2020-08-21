@@ -1,4 +1,56 @@
-<h1>{ Hello, friend! }</h1>
+<div align="center">
 
-<%= link_to "Sign in", new_account_session_path, class: "btn mr-2" %>
-<%= link_to "Sign up", new_account_registration_path, class: "btn" %>
+<div align="center">
+  <div class="typewriter">
+    <div class="typewriter-text">
+      { Hello, friend! }
+    </div>
+  </div>
+  <div class="container mb-5" align="center">
+    <h1 class="fade-in" style="color:white;">Welcome!</h1>
+    <br/>
+    <h3 class="fade-in">
+      <a style="color:white;" href=<%= new_account_registration_path %> >Sign up</a>
+    </h3>
+    <h3 class="fade-in">
+      <a style="text-decoration:underline; color:darkgreen;" href=<%= new_account_session_path %> >Sign in</a>
+    </h3>
+  </div>
+</div>
+
+
+
+<div class="row fade-in">
+
+  <div class="col-lg-4 col-md-12" style="color:#b8b8b8" align="center">
+    <h1><strong>Improve Skills</strong></h1>
+    <img src= <%=asset_path('code.png') %> height=150 />
+    <div>
+      <h5>Develop skills in many areas</h5>
+      <h5>using an easy collaborative enviroment</h5>
+      <h5>Encourages learning and working together</h5>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-12" style="color:#b8b8b8" align="center">
+    <h1><strong>Teamwork</strong></h1>
+    <img class="middle-img" src= <%=asset_path('collab.png') %> height=150/>
+    <div>
+      <h5>Discover or create project ideas</h5>
+      <h5>Collaborate together and share </h5>
+      <h5>ideas through messages </h5>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-12" style="color:#b8b8b8" align="center">
+    <h1><strong>Networking</strong></h1>
+    <img src= <%=asset_path('globe_dark.png') %> height=150 />
+    <div>
+      <h5>Meet others with similar interests and</h5>
+      <h5>skills. Share project ideas easily.</h5>
+      <h5>Connect with like-minded people. </h5>
+    </div>
+  </div>
+
+</div>
+
+
+</div>
