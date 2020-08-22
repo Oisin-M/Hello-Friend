@@ -1,4 +1,6 @@
-<div align="center">
+<div>
+
+<%= javascript_pack_tag 'homepageScroll', 'data-turbolinks-track': 'reload' %>
 
 <div align="center">
   <div class="typewriter">
@@ -9,20 +11,26 @@
   <div class="container mb-5" align="center">
     <h1 class="fade-in" style="color:white;">Welcome!</h1>
     <br/>
-    <h3 class="fade-in">
-      <a style="color:white;" href=<%= new_account_registration_path %> >Sign up</a>
-    </h3>
-    <h3 class="fade-in">
+    <h2 class="fade-in">
+      <a style="color:lightgreen;" href=<%= new_account_registration_path %> >Sign up</a>
+    </h2>
+    <h5 class="fade-in">
       <a style="text-decoration:underline; color:darkgreen;" href=<%= new_account_session_path %> >Sign in</a>
-    </h3>
+    </h5>
   </div>
 </div>
 
 
+<h3 class="container fade-in mb-2 mt-5" align="center" style="color:white">
+  Why should I use {Hello, friend}?
+</h3>
 
-<div class="row fade-in">
+<div class="col text-center mb-5 homepagebutton">
+<button id="click" type="button" class="btn btn-success btn-lg">Find out </button>
+</div>
 
-  <div class="col-lg-4 col-md-12" style="color:#b8b8b8" align="center">
+<div class="row fade-in info">
+  <div class="col-xl-4 col-lg-6 mb-5" style="color:#b8b8b8" align="center">
     <h1><strong>Improve Skills</strong></h1>
     <img src= <%=asset_path('code.png') %> height=150 />
     <div>
@@ -31,7 +39,7 @@
       <h5>Encourages learning and working together</h5>
     </div>
   </div>
-  <div class="col-lg-4 col-md-12" style="color:#b8b8b8" align="center">
+  <div class="col-xl-4 col-lg-6 mb-5" style="color:#b8b8b8" align="center">
     <h1><strong>Teamwork</strong></h1>
     <img class="middle-img" src= <%=asset_path('collab.png') %> height=150/>
     <div>
@@ -40,7 +48,7 @@
       <h5>ideas through messages </h5>
     </div>
   </div>
-  <div class="col-lg-4 col-md-12" style="color:#b8b8b8" align="center">
+  <div class="col-xl-4 col-lg-12 mb-5" style="color:#b8b8b8" align="center">
     <h1><strong>Networking</strong></h1>
     <img src= <%=asset_path('globe_dark.png') %> height=150 />
     <div>

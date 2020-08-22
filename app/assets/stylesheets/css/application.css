@@ -2,6 +2,37 @@ body {
    background: #171717;
  }
 
+ @media only screen and (max-width: 600px) {
+   .typewriter{
+     font-family: Courier, monospace;
+     display: inline-block;
+     margin-top: 20vh;
+     margin-bottom: 5vh;
+   }
+
+   .homepagebutton {
+     display: block;
+   }
+
+   .info {
+     /* display: none; */
+     margin-top: 20vh;
+   }
+ }
+
+ .typewriter {
+    font-family: Courier, monospace;
+    display: inline-block;
+}
+
+@media only screen and (min-width: 601px) {
+  .homepagebutton {
+    display: none;
+  }
+  .info {
+    margin-top: 40px;
+  }
+}
 
  .typewriter-text {
       font-family:georgia,garamond,serif;
@@ -15,13 +46,7 @@ body {
       font-weight: 700;
       border-right: 4px solid orange;
       box-sizing: border-box;
-
  }
-
- .typewriter {
-    font-family: Courier, monospace;
-	  display: inline-block;
-}
 
  @keyframes typing {
      from {
