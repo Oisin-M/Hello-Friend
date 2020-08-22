@@ -30,6 +30,17 @@
           <%= form.text_field :name %>
         </div>
 
+        <div class="field">
+          <%= form.label :profile_pic %>
+
+          <% if profile.profile_pic.attached? %>
+            <%= image_tag profile.profile_pic %>
+          <% end %>
+          
+          <%= form.file_field :profile_pic %>
+        </div>
+
+
 
         <% replacements = {
             '[' => '', ']' => '',
