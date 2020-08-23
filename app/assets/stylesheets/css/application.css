@@ -16,7 +16,7 @@ body {
 
    .info {
      /* display: none; */
-     margin-top: 25vh;
+     margin-top: 30vh;
    }
  }
 
@@ -93,4 +93,10 @@ body {
    100% {
      opacity:1;
    }
+ }
+
+ @media screen and (max-width: 767px){
+     .change-align {
+         text-align: center;
+     }
  }

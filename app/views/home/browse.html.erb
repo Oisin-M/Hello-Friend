@@ -1,23 +1,20 @@
 <div id="acc_id" data-acc-id=<%= current_account.id %>></div>
 <div id="swipe_id" data-swipe-id=<%= @swipe.try(:id) %>></div>
 
-<h1>Browse</h1>
+<div align="center">
+  <div class="blinking">
+    { Hello, friend! }</div>
+</div>
 
 <div class="container-fluid">
   <div class="row">
 
-    <div class="col-3">
-
-      <div class="text-right">
-        <%= link_to "Sign out", destroy_account_session_path, method: :delete, class: "btn btn-secondary" %>
-      </div>
-
-      <%= link_to "My Profile", current_account.profile %>
+    <div class="col-md-6 col-xl-3">
 
       <div class="text-center">
         <p>
-          <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle Liked Projects</a>
-          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle My Projects</button>
+          <a class="btn btn-success" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle Liked Projects</a>
+          <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle My Projects</button>
           <!-- <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle Both Projects</button> -->
         </p>
       </div>
@@ -71,6 +68,10 @@
       <% elsif @profile.present? %>
         <%= render "partials/show_profile" %>
       <% end %>
+
+      <div align="center">
+        <%= link_to "Sign out", destroy_account_session_path, method: :delete, class: "btn btn-secondary mt-3" %>
+      </div>
     </div>
 
     <div class="col-2"></div>

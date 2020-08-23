@@ -3,11 +3,17 @@
     { Hello, friend! }</div>
 </div>
 
+<div class="row">
+  <div class="col d-block d-xl-none d-lg-none d-md-none d-sm-block" align="center">
+  <img src= <%=asset_path('user_default.png') %> height=150 />
+  </div>
+</div>
+
 <div class="row mt-5">
-  <div class="col" align="right">
+  <div class="col d-none d-md-block" align="right">
     <img src= <%=asset_path('user_default.png') %> height=150 />
   </div>
-  <div class="col">
+  <div class="col change-align">
     <h2 style="color:lightgreen">Log in</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
