@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="card text-white bg-success">
+  <div class="card text-white bg-success mt-proj">
 
     <div class="card-header">
       Edit Your Profile
@@ -36,7 +36,7 @@
           <% if profile.profile_pic.attached? %>
             <%= image_tag profile.profile_pic %>
           <% end %>
-          
+
           <%= form.file_field :profile_pic %>
         </div>
 
