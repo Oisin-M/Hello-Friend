@@ -48,6 +48,20 @@ body {
       box-sizing: border-box;
  }
 
+ .blinking {
+   font-family:georgia,garamond,serif;
+   color: green;
+   display: inline-block;
+   overflow: hidden;
+   letter-spacing: 2px;
+   animation: blink .75s step-end infinite;
+   white-space: nowrap;
+   font-size: 9vw;
+   font-weight: 700;
+   border-right: 4px solid orange;
+   box-sizing: border-box;
+ }
+
  @keyframes typing {
      from {
          width: 0%
