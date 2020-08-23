@@ -23,6 +23,8 @@ class SwipesController < ApplicationController
     end
     @liked_projects = Project.where(id: @liked_project_ids)
 
+    @my_profile=Profile.where(account_id: current_account.id).first
+
     render "home/browse"
 
   end
@@ -63,6 +65,8 @@ class SwipesController < ApplicationController
     @project_to_swipe = Project.where.not(id: @seen_project_ids).where.not(account_id: current_account.id).first
 
     @no_projects_left="not null"
+
+    @my_profile=Profile.where(account_id: current_account.id).first
 
 
 

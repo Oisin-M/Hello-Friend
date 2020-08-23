@@ -20,6 +20,8 @@ class ProfilesController < ApplicationController
     end
     @liked_projects = Project.where(id: @liked_project_ids)
 
+    @my_profile=Profile.where(account_id: current_account.id).first
+
     render "home/browse"
   end
 
@@ -41,6 +43,8 @@ class ProfilesController < ApplicationController
     @liked_projects = Project.where(id: @liked_project_ids)
 
     @edit_profile = "not null"
+
+    @my_profile=Profile.where(account_id: current_account.id).first
 
     render "home/browse"
   end

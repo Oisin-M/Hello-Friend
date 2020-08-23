@@ -100,3 +100,12 @@ body {
          text-align: center;
      }
  }
+
+ .mt-proj {
+   margin-top:55px;
+ }
+
+ .my-prof-header {
+   color: #003200;
+   font-weight: bold;
+ }

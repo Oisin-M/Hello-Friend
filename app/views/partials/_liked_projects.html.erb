@@ -1,6 +1,13 @@
 <div class="card bg-dark">
-  <div class="card-header" style="color: white;">Liked Projects</div>
-  <div class="card-body">
+  <div class="row">
+    <div class="col">
+    <div class="card-header" style="color: white;">Liked Projects</div>
+    </div>
+    <div class="col">
+    <a class="btn btn-success mt-1" data-toggle="collapse" href="#multiCollapse1" role="button" aria-expanded="false" aria-controls="multiCollapse1">Toggle</a>
+    </div>
+  </div>
+  <div class="card-body collapse multi-collapse show" id="multiCollapse1">
     <% @liked_projects.each do |proj| %>
     <h5 class="card-title"><%= link_to proj.title, proj, class: "proj-links" %></h5>
 
