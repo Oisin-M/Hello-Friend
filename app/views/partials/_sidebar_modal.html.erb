@@ -1,0 +1,31 @@
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalCenter">
+  My Projects and Likes
+</button>
+
+<div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header bg-success">
+        <%= link_to @my_profile.name.upcase, @my_profile, class: "my-prof-header" %>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12" align="left">
+              <%= render partial: "partials/liked_projects" %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12" align="left">
+              <%= render partial: "partials/my_projects" %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

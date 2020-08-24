@@ -9,13 +9,19 @@
 <div class="container-fluid">
 
   <div class="row">
+    <div class="col d-block d-xl-none d-lg-none d-md-none d-sm-block" align="center" style="margin-top: 100px;">
+      <%= render partial: "partials/sidebar_modal" %>
+    </div>
+  </div>
+
+  <div class="row">
 
     <div class="col-md-6 col-lg-5 col-xl-4 d-none d-md-block">
       <div class="col">
         <div class="row">
           <div class="col-12">
               <div class="card bg-success">
-              <div class="card-header" align="center">
+              <div class="card-header" align="left">
                 <%= link_to @my_profile.name.upcase, @my_profile, class: "my-prof-header" %>
               </div>
               </div>
