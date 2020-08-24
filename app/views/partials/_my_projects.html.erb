@@ -22,7 +22,10 @@
              <%= markdown(" : "+like.messages.last.body[0..20].gsub('<br>', "").gsub('\\', ''))+ '...' %>
            <% end %>
          </span>
-         <%= link_to "Message", Swipe.find_by(project_id: proj.id, account_id: like.account_id) %></p>
+         <a href=<%= swipe_path(Swipe.find_by(project_id: proj.id, account_id: like.account_id)) %> >
+          <i class="fa fa-comment" style="color: springgreen;"></i>
+         </a>
+       </p>
       <% end %>
     </div>
     <% end %>
