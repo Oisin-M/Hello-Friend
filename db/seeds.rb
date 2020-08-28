@@ -17,10 +17,10 @@ Account.create([
 
 
 Project.create([
-  {account_id: 1, title: "CERN Webfest Hackathon", description: "Help us make a better future!"},
-  {account_id: 2, title: "VisuPy", description: "Visualise Python Functions"},
-  {account_id: 3, title: "Less Typing, More Thinking!", description: "Make a Latex database"},
-  {account_id: 4, title: "CitiCERN", description: "Building cities for the future"},
-  {account_id: 5, title: "DisCERN", description: "Join us and let's make something!"},
-  {account_id: 3, title: "Hello, friend", description: "Bringing programmers together"},
+  {account_id: 1, title: "CERN Webfest Hackathon", description: "Help us make a better future!", skills: "Java", category: "Hackathon"},
+  {account_id: 2, title: "VisuPy", description: "Visualise Python Functions", skills: "Javascript", category: "Humanitarian"},
+  {account_id: 3, title: "Less Typing, More Thinking!", description: "Make a Latex database", skills: "Python", category: "Science"},
+  {account_id: 4, title: "CitiCERN", description: "Building cities for the future", skills: "Scratch", category: "Algorithms"},
+  {account_id: 5, title: "DisCERN", description: "Join us and let's make something!", skills: "C#", category: "Manufacture"},
+  {account_id: 3, title: "Hello, friend", description: "Bringing programmers together", skills: "C++", category: "Collaboration"},
 ])
