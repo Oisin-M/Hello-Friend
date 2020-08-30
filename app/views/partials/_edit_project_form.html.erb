@@ -21,9 +21,43 @@
     <%= form.text_area :description %>
   </div>
 
+
+
   <div class="field">
-    <%= form.label :account_id %>
-    <%= form.text_field :account_id %>
+    <%= form.label :skills %>
+    <% replacements = {
+        '[' => '', ']' => '',
+        '/' => '', '"' => ''} %>
+    <% if @project.skills=="[\"\"]"
+    selected_skills = []
+    else
+    selected_skills = @project.skills.gsub(Regexp.union(replacements.keys), replacements)[2..-1].split(", ")
+    end %>
+    <%= form.select(:skills, [['Python', 'Python'],
+                              ['JavaScript', 'JavaScript'],
+                              ['C#', 'C#'],
+                              ['Ruby', 'Ruby'],
+                              ['HTML', 'HTML']
+                             ], {:selected => selected_skills, :include_blank => true },
+                               { :multiple => true }
+                             ) %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.select(:category, [['Python', 'Python'],
+                              ['JavaScript', 'JavaScript'],
+                              ['C#', 'C#'],
+                              ['Ruby', 'Ruby'],
+                              ['HTML', 'HTML']],
+                               {:selected => @project.category, :include_blank => true },
+                               { :multiple => false }
+                             ) %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :account_id, value: current_account.id %>
   </div>
 
   <div class="actions">
