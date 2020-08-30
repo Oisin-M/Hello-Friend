@@ -27,7 +27,10 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+  end
 
+  # GET /projects/1/edit
+  def edit
 
     @my_projects=Project.where(account_id: current_account.id)
     @seen = Swipe.where(account_id: current_account.id)
@@ -38,16 +41,12 @@ class ProjectsController < ApplicationController
     end
     @liked_projects = Project.where(id: @liked_project_ids)
 
-    @new_project="not null"
+    @edit_project = "not null"
 
     @my_profile=Profile.where(account_id: current_account.id).first
 
     render "home/browse"
 
-  end
-
-  # GET /projects/1/edit
-  def edit
   end
 
   # POST /projects

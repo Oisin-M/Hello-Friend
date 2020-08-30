@@ -60,14 +60,16 @@
         <%= render "partials/send_message_form", message: Message.new %>
       <% elsif @new_project.present? %>
         <%= render "partials/new_project_form", project: Project.new %>
-      <% elsif @project.present? %>
-        <%= render "partials/project" %>
       <% elsif @new_profile.present? %>
         <%= render "partials/profile_form", profile: Profile.new %>
       <% elsif @edit_profile.present? %>
         <%= render "partials/edit_profile_form", profile: @profile %>
+      <% elsif @edit_project.present? %>
+        <%= render "partials/edit_project_form", project: @project %>
       <% elsif @profile.present? %>
         <%= render "partials/show_profile" %>
+      <% elsif @project.present? %>
+        <%= render "partials/project" %>
       <% end %>
 
       <div align="center">
