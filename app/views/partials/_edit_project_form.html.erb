@@ -21,7 +21,15 @@
     <%= form.text_area :description %>
   </div>
 
+  <div class="field">
+    <%= form.label :image %>
 
+    <% if project.image.attached? %>
+      <%= image_tag project.image %>
+    <% end %>
+
+    <%= form.file_field :image %>
+  </div>
 
   <div class="field">
     <%= form.label :skills %>

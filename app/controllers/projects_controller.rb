@@ -101,6 +101,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:title, :description, :category, :account_id, :image, skills: [])
+      params.require(:project).permit(:title, :description, :image, :category, :account_id, skills: [])
     end
 end

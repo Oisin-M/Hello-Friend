@@ -1,13 +1,19 @@
 <div class="card text-white bg-success mt-proj">
 
   <div class="card-header">
-    <%= Account.find(@project.account_id).email %>
-    <%= link_to "Back", browse_path, class: "float-right" %>
+    <span class="dg-bold"><%= @project.title %></span>
+    <%= link_to "Back to Browsing", browse_path, class: "float-right dg" %>
   </div>
-  <div class="card-body">
-    <h5 class="card-title">Title: <%= @project.title %></h5>
-    <p class="card-text">Description: <%= @project.description %></p>
-    <p class="card-text">Skills: <%= @project.skills %></p>
+  <div class="card-body lgb">
+    <p class="card-text italics">Project proposed by <%= link_to Profile.find_by(account_id: @project.account_id).name, Profile.find_by(account_id: @project.account_id), class: "white-text" %></p>
+    <% if @project.image.attached? %>
+      <%= image_tag @project.image, class: "image" %>
+    <% end %>
+    <% replacements = {
+        '[' => '', ']' => '',
+        '/' => '', '"' => ''} %>
+    <p class="card-text"><%= @project.description %></p>
+    <p class="card-text">Skills: <%= @project.skills.gsub(Regexp.union(replacements.keys), replacements)[2..-1] %></p>
     <p class="card-text">Category: <%= @project.category %></p>
   </div>
 </div>
