@@ -1,16 +1,18 @@
 <div class="card text-white bg-success mt-proj">
 
   <div class="card-header">
-    <%= Account.find(@profile.account_id).email %>
-    <%= link_to "Back", browse_path, class: "float-right" %>
+    <span class="dg-bold"><%= @profile.name %></span>
+    <%= link_to "Back to Browsing", browse_path, class: "float-right dg" %>
   </div>
-  <div class="card-body">
-    <h5 class="card-title"><%= @profile.name %></h5>
-    <p class="card-text">Skills: <%= @profile.skills %></p>
+  <div class="card-body lgb">
+    <p class="card-text"><span class="white-text"> About me: </span> <br/> Here's my bio.</p>
     <% if @profile.profile_pic.attached? %>
       <%= image_tag @profile.profile_pic %>
     <% end %>
-    <p class="card-text">(Other data would go here)</p>
+    <% replacements = {
+        '[' => '', ']' => '',
+        '/' => '', '"' => ''} %>
+    <p class="card-text"><span class="white-text"> Skills: </span> <%= @profile.skills.gsub(Regexp.union(replacements.keys), replacements)[2..-1] %></p>
   </div>
 </div>
 <% if current_account.id==@profile.account_id %>

@@ -13,8 +13,8 @@
         '[' => '', ']' => '',
         '/' => '', '"' => ''} %>
     <p class="card-text"><%= @project.description %></p>
-    <p class="card-text">Skills: <%= @project.skills.gsub(Regexp.union(replacements.keys), replacements)[2..-1] %></p>
-    <p class="card-text">Category: <%= @project.category %></p>
+    <p class="card-text"><span class="white-text">Skills: </span> <%= @project.skills.gsub(Regexp.union(replacements.keys), replacements)[2..-1] %></p>
+    <p class="card-text"><span class="white-text">Category: </span> <%= @project.category %></p>
   </div>
 </div>
 <% if current_account.id==@project.account_id %>
