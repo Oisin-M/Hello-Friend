@@ -7,7 +7,7 @@
   <div class="card-body lgb">
     <p class="card-text"><span class="white-text"> About Me </span> <br/><%= @profile.bio %></p>
     <% if @profile.profile_pic.attached? %>
-      <%= image_tag @profile.profile_pic %>
+      <%= image_tag @profile.profile_pic, class: "image" %>
     <% end %>
     <% replacements = {
         '[' => '', ']' => '',

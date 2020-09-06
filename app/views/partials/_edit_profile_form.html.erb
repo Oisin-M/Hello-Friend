@@ -17,39 +17,45 @@
       <span class="dg-bold">Edit</span>
       <%= link_to "Back to Browsing", browse_path, class: "float-right dg" %>
     </div>
-    <div class="card-body lgb">
+    <div class="card-body lgb container">
       <h5 class="card-title text-white">My Profile</h5>
-      <div class="card-text">
-      <table>
+      <div class="card-text mb-5">
 
         <div class="field">
           <%= form.hidden_field :account_id, value: current_account.id %>
         </div>
 
-        <tr class="field">
-          <td><%= form.label :name %></td>
-          <td><%= form.text_field :name %></td>
-        </tr>
+        <div class="field row">
+          <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-xs-3" align="left"><%= form.label :name %></div>
+          <div class="col" align="left"><%= form.text_field :name %></div>
+        </div>
 
-        <tr class="field">
-          <td><%= form.label :bio, "About Me" %></td>
-          <td><%= form.text_area :bio, size: "30x3" %></td>
-        </tr>
+        <div class="field row">
+          <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-xs-3" align="left"><%= form.label :bio, "About Me" %></div>
+          <div class="col" align="left"><%= form.text_area :bio, size: "25x3" %></div>
+        </div>
 
-        <tr class="field">
-          <td><%= form.label :profile_pic, "Profile Picture" %></td>
-          <td>
+        <div class="field row">
+          <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-xs-3" align="left"><%= form.label :profile_pic, "Profile Picture" %></div>
+
+          <div class="col" align="left">
+          <div class="">
           <% if profile.profile_pic.attached? %>
-            <%= image_tag profile.profile_pic, width: "250px" %>
+            <%= image_tag profile.profile_pic, class: "image" %>
           <% end %>
+          </div>
 
-          <%= form.file_field :profile_pic %>
-          </td>
-        </tr>
+          <div class="file-input-div mb-1">
+          <%= form.file_field :profile_pic, accept: 'image/png,image/gif,image/jpeg', class: "file-upload" %>
+          </div>
+
+          </div>
+
+        </div>
 
 
-        <tr class="field">
-          <td><%= form.label :skills %></td>
+        <div class="field row">
+          <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-xs-3" align="left"><%= form.label :skills %></div>
 
           <% replacements = {
               '[' => '', ']' => '',
@@ -60,21 +66,20 @@
           selected_skills = @profile.skills.gsub(Regexp.union(replacements.keys), replacements)[2..-1].split(", ")
           end %>
 
-          <td><%= form.select(:skills, [['Python', 'Python'],
+          <div class="col" align="left"><%= form.select(:skills, [['Python', 'Python'],
                                     ['JavaScript', 'JavaScript'],
                                     ['C#', 'C#'],
                                     ['Ruby', 'Ruby'],
                                     ['HTML', 'HTML']
                                    ], {:selected => selected_skills, :include_blank => true },
                                      { :multiple => true }
-                                   ) %></td>
-        </tr>
+                                   ) %></div>
+        </div>
 
 
-    </table>
-    <div class="actions">
-      <%= form.submit "Update Profile", :class => "btn bg-dark text-white" %>
     </div>
+    <div class="actions" align="left">
+      <%= form.submit "Update Profile", :class => "btn bg-dark text-white" %>
     </div>
     </div>
   </div>

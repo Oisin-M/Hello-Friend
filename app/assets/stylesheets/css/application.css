@@ -112,3 +112,11 @@ body {
    margin-left: auto;
    margin-right: auto;
  }
+
+ .file-input-div {
+   width: 100%;
+ }
+
+.file-upload {
+  width: inherit;
+}
