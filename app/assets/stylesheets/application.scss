@@ -53,3 +53,14 @@
 a:hover {
   color: yellow;
 }
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+td {
+  text-align:left;
+  padding:0;
+  border-spacing:0; /* or border-collapse:collapse */
+}
