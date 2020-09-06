@@ -14,36 +14,38 @@
   <div class="card text-white bg-success mt-proj">
 
     <div class="card-header">
-      Edit Your Profile
-      <%= link_to "Back", browse_path, class: "float-right" %>
+      <span class="dg-bold">Edit</span>
+      <%= link_to "Back to Browsing", browse_path, class: "float-right dg" %>
     </div>
-    <div class="card-body">
-      <h5 class="card-title">[text]</h5>
-      <p class="card-text">
+    <div class="card-body lgb">
+      <h5 class="card-title text-white">My Profile</h5>
+      <div class="card-text">
+      <table>
 
         <div class="field">
           <%= form.hidden_field :account_id, value: current_account.id %>
         </div>
 
-        <div class="field">
-          <%= form.label :name %>
-          <%= form.text_field :name %>
-        </div>
+        <tr class="field">
+          <td><%= form.label :name %></td>
+          <td><%= form.text_field :name %></td>
+        </tr>
 
-        <div class="field">
-          <%= form.label :profile_pic %>
-
+        <tr class="field">
+          <td><%= form.label :profile_pic, "Profile Picture" %></td>
+          <td>
           <% if profile.profile_pic.attached? %>
             <%= image_tag profile.profile_pic %>
           <% end %>
 
           <%= form.file_field :profile_pic %>
-        </div>
+          </td>
+        </tr>
 
 
-        <div class="field">
-          <%= form.label :skills %>
-          
+        <tr class="field">
+          <td><%= form.label :skills %></td>
+
           <% replacements = {
               '[' => '', ']' => '',
               '/' => '', '"' => ''} %>
@@ -53,21 +55,22 @@
           selected_skills = @profile.skills.gsub(Regexp.union(replacements.keys), replacements)[2..-1].split(", ")
           end %>
 
-          <%= form.select(:skills, [['Python', 'Python'],
+          <td><%= form.select(:skills, [['Python', 'Python'],
                                     ['JavaScript', 'JavaScript'],
                                     ['C#', 'C#'],
                                     ['Ruby', 'Ruby'],
                                     ['HTML', 'HTML']
                                    ], {:selected => selected_skills, :include_blank => true },
                                      { :multiple => true }
-                                   ) %>
-        </div>
+                                   ) %></td>
+        </tr>
 
-        <div class="actions">
-          <%= form.submit %>
-        </div>
 
-    </p>
+    </table>
+    <div class="actions">
+      <%= form.submit "Update Profile", :class => "btn bg-dark text-white" %>
+    </div>
+    </div>
+    </div>
   </div>
-</div>
 <% end %>
