@@ -32,6 +32,11 @@
         </tr>
 
         <tr class="field">
+          <td><%= form.label :bio, "About Me" %></td>
+          <td><%= form.text_area :bio, size: "30x3" %></td>
+        </tr>
+
+        <tr class="field">
           <td><%= form.label :profile_pic, "Profile Picture" %></td>
           <td>
           <% if profile.profile_pic.attached? %>

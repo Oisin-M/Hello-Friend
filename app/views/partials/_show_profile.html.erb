@@ -5,7 +5,7 @@
     <%= link_to "Back to Browsing", browse_path, class: "float-right dg" %>
   </div>
   <div class="card-body lgb">
-    <p class="card-text"><span class="white-text"> About me: </span> <br/> Here's my bio.</p>
+    <p class="card-text"><span class="white-text"> About Me </span> <br/><%= @profile.bio %></p>
     <% if @profile.profile_pic.attached? %>
       <%= image_tag @profile.profile_pic %>
     <% end %>

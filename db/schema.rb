@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_25_190021) do
+ActiveRecord::Schema.define(version: 2020_09_06_115725) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_190021) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "skills"
+    t.text "bio"
     t.index ["account_id"], name: "index_profiles_on_account_id"
   end
 
