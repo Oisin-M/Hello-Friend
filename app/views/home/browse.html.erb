@@ -23,6 +23,9 @@
               <div class="card bg-success">
               <div class="card-header" align="left">
                 <%= link_to @my_profile.name.upcase, @my_profile, class: "dg-bold" %>
+                <%= link_to destroy_account_session_path, method: :delete, :class=> "float-right dg" do %>
+                    <i class="fa fa-power-off "></i>
+                <% end %>
               </div>
               </div>
           </div>
@@ -73,7 +76,7 @@
       <% end %>
 
       <div align="center">
-        <%= link_to "Sign out", destroy_account_session_path, method: :delete, class: "btn btn-secondary mt-3" %>
+        <%= link_to "Sign out", destroy_account_session_path, method: :delete, class: "btn btn-secondary mt-2 mb-3" %>
       </div>
     </div>
 
