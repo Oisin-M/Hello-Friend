@@ -16,5 +16,5 @@
   </div>
 </div>
 <% if current_account.id==@profile.account_id %>
-<%= link_to "Edit", edit_profile_path(@profile) %>
+<%= link_to "Edit", edit_profile_path(@profile), class: "proj-links" %>
 <% end %>
