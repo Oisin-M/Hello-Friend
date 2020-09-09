@@ -120,3 +120,17 @@ body {
 .file-upload {
   width: inherit;
 }
+
+.prof-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.thumb-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}

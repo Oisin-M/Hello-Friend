@@ -1,14 +1,15 @@
-<div class="card text-white bg-success mt-proj">
+<div class="card text-white bg-success mt-proj" align="center">
 
-  <div class="card-header">
+  <div class="card-header" align="left">
     <span class="dg-bold"><%= @profile.name %></span>
     <%= link_to "Back to Browsing", browse_path, class: "float-right dg" %>
   </div>
   <div class="card-body lgb">
-    <p class="card-text"><span class="white-text"> About Me </span> <br/><%= @profile.bio %></p>
+    <div class="white-text mb-3"> About <%= @profile.name %> </div>
     <% if @profile.profile_pic.attached? %>
-      <%= image_tag @profile.profile_pic, class: "image" %>
+      <%= image_tag @profile.profile_pic, class: "prof-image" %>
     <% end %>
+    <p class="card-text"> <br/><%= markdown @profile.bio %></p>
     <% replacements = {
         '[' => '', ']' => '',
         '/' => '', '"' => ''} %>

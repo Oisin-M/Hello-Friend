@@ -11,28 +11,44 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="card text-white bg-success mt-proj">
+
+    <div class="card-header" align="left">
+      <span class="dg-bold">Edit</span>
+      <%= link_to "Back to Browsing", browse_path, class: "float-right dg" %>
+    </div>
+    <div class="card-body lgb container">
+      <h5 class="card-title text-white">My Projects</h5>
+      <div class="card-text mb-5">
+
+  <div class="field row">
+    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-xs-3" align="left"><%= form.label :title %></div>
+    <div class="col" align="left"><%= form.text_field :title, class: "input-field" %></div>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="field row">
+    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-xs-3" align="left"><%= form.label :description %></div>
+    <div class="col" align="left"><%= form.text_area :description, class: "input-field-area" %></div>
   </div>
 
-  <div class="field">
-    <%= form.label :image %>
+  <div class="field row">
+    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-xs-3" align="left"><%= form.label :image %></div>
 
+    <div class="col" align="left">
+    <div class="">
     <% if project.image.attached? %>
-      <%= image_tag project.image %>
+      <%= image_tag project.image, class: "image" %>
     <% end %>
+    </div>
 
-    <%= form.file_field :image %>
+    <div class="file-input-div mb-1">
+    <%= form.file_field :image, accept: 'image/png,image/gif,image/jpeg', class: "file-upload" %></div>
+    </div>
+
   </div>
 
-  <div class="field">
-    <%= form.label :skills %>
+  <div class="field row">
+    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-xs-3" align="left"><%= form.label :skills %></div>
     <% replacements = {
         '[' => '', ']' => '',
         '/' => '', '"' => ''} %>
@@ -41,34 +57,39 @@
     else
     selected_skills = @project.skills.gsub(Regexp.union(replacements.keys), replacements)[2..-1].split(", ")
     end %>
-    <%= form.select(:skills, [['Python', 'Python'],
+    <div class="col" align="left"><%= form.select(:skills, [['Python', 'Python'],
                               ['JavaScript', 'JavaScript'],
                               ['C#', 'C#'],
                               ['Ruby', 'Ruby'],
                               ['HTML', 'HTML']
                              ], {:selected => selected_skills, :include_blank => true },
                                { :multiple => true }
-                             ) %>
+                             ) %></div>
   </div>
 
 
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.select(:category, [['Python', 'Python'],
+  <div class="field row">
+    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-xs-3" align="left"><%= form.label :category %></div>
+    <div class="col" align="left"><%= form.select(:category, [['Python', 'Python'],
                               ['JavaScript', 'JavaScript'],
                               ['C#', 'C#'],
                               ['Ruby', 'Ruby'],
                               ['HTML', 'HTML']],
                                {:selected => @project.category, :include_blank => true },
                                { :multiple => false }
-                             ) %>
+                             ) %></div>
   </div>
 
   <div class="field">
     <%= form.hidden_field :account_id, value: current_account.id %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
   </div>
+
+  <div class="actions">
+    <%= form.submit "Update Project", :class => "btn bg-dark text-white" %>
+  </div>
+
+</div>
+</div>
 <% end %>
