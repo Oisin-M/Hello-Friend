@@ -67,7 +67,7 @@
       <% elsif @new_project.present? %>
         <%= render "partials/new_project_form", project: Project.new %>
       <% elsif @new_profile.present? %>
-        <%= render "partials/profile_form", profile: Profile.new %>
+        <%= render "partials/new_profile_form", profile: Profile.new %>
       <% elsif @edit_profile.present? %>
         <%= render "partials/edit_profile_form", profile: @profile %>
       <% elsif @edit_project.present? %>
