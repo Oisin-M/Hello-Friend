@@ -56,21 +56,12 @@
         <div class="field row">
           <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-xs-3" align="left"><%= form.label :skills %></div>
 
-          <% replacements = {
-              '[' => '', ']' => '',
-              '/' => '', '"' => ''} %>
-          <% if @profile.skills=="[\"\"]"
-          selected_skills = []
-          else
-          selected_skills = @profile.skills.gsub(Regexp.union(replacements.keys), replacements)[2..-1].split(", ")
-          end %>
-
           <div class="col" align="left"><%= form.select(:skills, [['Python', 'Python'],
                                     ['JavaScript', 'JavaScript'],
                                     ['C#', 'C#'],
                                     ['Ruby', 'Ruby'],
                                     ['HTML', 'HTML']
-                                   ], {:selected => selected_skills, :include_blank => true },
+                                   ], {:include_blank => true },
                                      { :multiple => true }
                                    ) %></div>
         </div>

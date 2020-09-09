@@ -6,7 +6,9 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content bg-dark">
       <div class="modal-header bg-success">
+        <% if !current_account.profile.nil? %>
         <%= link_to @my_profile.name.upcase, @my_profile, class: "my-prof-header" %>
+        <% end %>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

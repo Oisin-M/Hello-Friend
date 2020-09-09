@@ -22,10 +22,12 @@
           <div class="col-12">
               <div class="card bg-success">
               <div class="card-header" align="left">
+                <% if !current_account.profile.nil? %>
                 <% if @my_profile.profile_pic.attached? %>
                   <%= image_tag @my_profile.profile_pic, class: "thumb-image mr-2" %>
                 <% end %>
                 <%= link_to @my_profile.name.upcase, @my_profile, class: "dg-bold" %>
+                <% end %>
                 <%= link_to destroy_account_session_path, method: :delete, :class=> "float-right dg" do %>
                     <i class="fa fa-power-off "></i>
                 <% end %>
