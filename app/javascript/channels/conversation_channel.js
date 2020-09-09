@@ -32,7 +32,7 @@ document.addEventListener('turbolinks:load', () => {
         const message_div = document.getElementById("messages");
         message_div.innerHTML+=data.message
         message_div.innerHTML+=" - "
-        message_div.innerHTML+=data.email
+        message_div.innerHTML+=data.sender
         message_div.innerHTML+="</br>"
       }
     }

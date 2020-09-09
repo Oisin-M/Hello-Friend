@@ -1,18 +1,26 @@
-<%= link_to "Back", browse_path, class: "float-right" %>
+<%= link_to "Back to Browsing", browse_path, class: "float-right" %>
 
 <%= Project.find(@swipe.project_id).title %>
-<%= @swipe.account_id==current_account.id ? Account.find(Project.find(@swipe.project_id).account_id).email : Account.find(@swipe.account_id).email %>
+<%= @swipe.account_id==current_account.id ? Account.find(Project.find(@swipe.project_id).account_id).profile.name : Account.find(@swipe.account_id).profile.name %>
 
 </br>
 <% if @swipe.messages.length==0 %>
   <h6>No messages to display.</h6>
 <% else %>
 <% @swipe.messages.each do |msg| %>
+<div class="row">
   <% if msg.account_id==current_account.id %>
-  <strong><%= markdown msg.body %> - <%= Account.find(msg.account_id).email %></strong>
+  <div class="col"></div>
+  <div class="col">
+    <%= render "partials/my_message", msg: msg %>
+  </div>
   <% else %>
-  <%= markdown msg.body %> - <%= Account.find(msg.account_id).email %>
+  <div class="col">
+    <%= render "partials/not_my_message", msg: msg %>
+  </div>
+  <div class="col"></div>
   <% end %>
+</div>
   </br>
 <% end %>
 <% end %>
