@@ -36,7 +36,7 @@ class MessagesController < ApplicationController
       sender_id: current_account.id)
 
     ActionCable.server.broadcast("sidebarconversations_channel",
-      message: markdown(' : '+@message.body[0..20].gsub('<br>', "").gsub('\\', ''))+'...',
+      message: markdown(' : '+@message.body[0..20].gsub('<br>', "").gsub('\\', '').gsub('<br/>', ""))+'...',
       sender: Account.find(current_account.id).profile.name,
       swipe_id: @message.swipe_id,
       acc_id1: Swipe.find(@message.swipe_id).account_id,
