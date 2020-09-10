@@ -120,3 +120,19 @@ a:hover {
   display: flex;
   flex-direction: column-reverse;
 }
+
+.outline-card {
+  outline: 5px solid #292b2c;
+}
+
+.message-field {
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  height: 50px;
+  width: 70%;
+}
+
+.msg-send {
+  margin-top: -45px;
+}
