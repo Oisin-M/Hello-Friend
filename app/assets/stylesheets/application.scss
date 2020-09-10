@@ -66,6 +66,8 @@ a:hover {
 .small-text {
   font-size: 10px;
   color: white;
+  padding-left: 10px;
+  text-align: left;
 }
 
 .message-body {
@@ -74,12 +76,47 @@ a:hover {
 
 .my-message {
   background-color: blue;
-  padding: 8px;
   border-radius: 20px;
+  padding: 8px 20px 4px 20px;
+  text-align: left;
+  animation: fadeIn 1s ease-in;
+
 }
 
 .other-message {
   background-color: orange;
-  padding: 8px;
   border-radius: 20px;
+  padding: 4px 20px 8px 20px;
+  text-align: left;
+  // animation: fadeIn 1s ease-in;
+}
+
+// @keyframes fadeIn {
+//     0% {
+//         opacity: 0;
+//     }
+//     100% {
+//         opacity: 1;
+//     }
+// }
+
+.msg-image {
+  margin-top: 22px;
+}
+
+.msg-proj {
+  font-size: 20px;
+}
+
+.msg-name {
+  color: white;
+}
+
+#message-box{
+  outline: 5px solid #292b2c;
+  height: 50vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column-reverse;
 }

@@ -1,26 +1,32 @@
+<div class="card bg-dark"><div class="card-body">
 <%= link_to "Back to Browsing", browse_path, class: "float-right" %>
 
-<%= Project.find(@swipe.project_id).title %>
-<%= @swipe.account_id==current_account.id ? Account.find(Project.find(@swipe.project_id).account_id).profile.name : Account.find(@swipe.account_id).profile.name %>
+<%= link_to Project.find(@swipe.project_id).title, Project.find(@swipe.project_id), class: "msg-proj proj-links" %>
+<% prof_name = @swipe.account_id==current_account.id ? Account.find(Project.find(@swipe.project_id).account_id).profile.name : Account.find(@swipe.account_id).profile.name %>
+<% prof = @swipe.account_id==current_account.id ? Account.find(Project.find(@swipe.project_id).account_id).profile : Account.find(@swipe.account_id).profile %>
+<span class="msg-name">by <%= link_to prof_name, prof, class: "green-links" %></span>
+</div></div>
 
-</br>
+<div id="message-box">
 <% if @swipe.messages.length==0 %>
-  <h6>No messages to display.</h6>
+  <br/>
+  <h6 class="text-white ml-3">No messages to display.</h6>
 <% else %>
-<% @swipe.messages.each do |msg| %>
-<div class="row">
-  <% if msg.account_id==current_account.id %>
-  <div class="col"></div>
-  <div class="col">
-    <%= render "partials/my_message", msg: msg %>
+  <% @swipe.messages.reverse_each do |msg| %>
+  <div class="row">
+    <% if msg.account_id==current_account.id %>
+    <div class="col-lg-6 col-md-1 col-sm-6 col-xs-1"></div>
+    <div class="col-lg-6 col-md-11 col-sm-6 col-xs-11">
+      <%= render "partials/my_message", msg: msg %>
+    </div>
+    <% else %>
+    <div class="col-lg-6 col-md-11 col-sm-6 col-xs-11">
+      <%= render "partials/not_my_message", msg: msg %>
+    </div>
+    <div class="col-lg-6 col-md-1 col-sm-6 col-xs-1"></div>
+    <% end %>
   </div>
-  <% else %>
-  <div class="col">
-    <%= render "partials/not_my_message", msg: msg %>
-  </div>
-  <div class="col"></div>
+    </br>
   <% end %>
+<% end %>
 </div>
-  </br>
-<% end %>
-<% end %>

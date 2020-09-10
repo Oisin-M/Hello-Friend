@@ -33,6 +33,7 @@ class MessagesController < ApplicationController
       message: markdown(@message.body),
       sender: Account.find(current_account.id).profile.name,
       email: Account.find(current_account.id).email,
+      image_url: Account.find(current_account.id).profile.profile_pic.attached? ? url_for(Account.find(current_account.id).profile.profile_pic) : "",
       sender_id: current_account.id)
 
     ActionCable.server.broadcast("sidebarconversations_channel",

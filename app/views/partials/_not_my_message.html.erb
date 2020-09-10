@@ -1,4 +1,13 @@
-<div class="small-text ml-3"><%= Account.find(msg.account_id).profile.name %></div>
+<div class="row">
+  <div class="col-1 mr-2">
+<% if Account.find(msg.account_id).profile.profile_pic.attached? %>
+  <%= image_tag Account.find(msg.account_id).profile.profile_pic, class: "thumb-image mr-2 msg-image" %>
+<% end %>
+</div>
+<div class="col">
+  <div class="small-text"><%= Account.find(msg.account_id).profile.name %></div>
 <div class="container other-message">
   <span class="message-body"><%= markdown msg.body %></span>
+</div>
+</div>
 </div>

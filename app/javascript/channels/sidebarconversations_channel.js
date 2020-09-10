@@ -1,7 +1,6 @@
 import consumer from "./consumer"
 
 document.addEventListener('turbolinks:load', () => {
-
   const acc_element = document.getElementById('acc_id');
   const acc_id = acc_element.getAttribute('data-acc-id');
 
@@ -21,10 +20,19 @@ document.addEventListener('turbolinks:load', () => {
       //if relevant to my account, do stuff
       //might want to have separate sidebar channel for each account and then send data to those instead of just to everyone
       if (data.acc_id1==acc_id || data.acc_id2==acc_id) {
+
+
+        //THIS IS NEEDED, NOT SURE WHY
+        document.getElementById("div_swipe"+data.swipe_id).innerHTML="Here's some stuff"
+
         const swipe_span = document.getElementById("swipe"+data.swipe_id);
-        var html_to_add = data.sender+data.message;
+        var html_to_add = String(data.sender+data.message);
         swipe_span.innerHTML=html_to_add;
         MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+
+        // location.reload();
+
+
       }
     }
   });
