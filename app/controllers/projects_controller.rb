@@ -8,21 +8,26 @@ class ProjectsController < ApplicationController
   end
 
   def new_project
+    if account_signed_in?
+      if current_account.profile.nil?
+        not_signed_in_page
+    else
+      @my_projects=Project.where(account_id: current_account.id)
+      @seen = Swipe.where(account_id: current_account.id)
+      @likes = @seen.where(liked: true)
+      @liked_project_ids = []
+      @likes.each do |like|
+        @liked_project_ids.append(like.project_id)
+      end
+      @liked_projects = Project.where(id: @liked_project_ids)
 
-    @my_projects=Project.where(account_id: current_account.id)
-    @seen = Swipe.where(account_id: current_account.id)
-    @likes = @seen.where(liked: true)
-    @liked_project_ids = []
-    @likes.each do |like|
-      @liked_project_ids.append(like.project_id)
+      @my_profile=Profile.where(account_id: current_account.id).first
+
+      @new_project = "not null"
+
+      render "home/browse"
+      end
     end
-    @liked_projects = Project.where(id: @liked_project_ids)
-
-    @my_profile=Profile.where(account_id: current_account.id).first
-
-    @new_project = "not null"
-
-    render "home/browse"
   end
 
 
