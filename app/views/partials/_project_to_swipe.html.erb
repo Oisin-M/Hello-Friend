@@ -1,7 +1,7 @@
-<div class="card text-white bg-success mt-proj">
+<div class="card text-white bg-dark mt-proj">
 
   <div class="card-header">
-    <span class="dg-bold"><%= @project_to_swipe.title %></span>
+    <span class="dg-bold"><%= link_to @project_to_swipe.title, @project_to_swipe %></span>
     <%= link_to "Back to Browsing", browse_path, class: "float-right dg" %>
   </div>
   <div class="card-body lgb">
