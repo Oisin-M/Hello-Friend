@@ -9,7 +9,7 @@
     <% if @profile.profile_pic.attached? %>
       <%= image_tag @profile.profile_pic, class: "prof-image" %>
     <% end %>
-    <p class="card-text"> <br/><%= markdown @profile.bio %></p>
+    <p class="card-text descrip"> <br/><%= markdown @profile.bio %></p>
     <% replacements = {
         '[' => '', ']' => '',
         '/' => '', '"' => ''} %>
