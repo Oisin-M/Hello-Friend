@@ -1,7 +1,19 @@
-<div class="card text-white bg-dark mt-proj">
-  <div class="card-header"><%= Account.find(@project_to_swipe.account_id).email %></div>
-  <div class="card-body">
-    <h5 class="card-title"><%= @project_to_swipe.title %></h5>
-    <p class="card-text"><%= @project_to_swipe.description %></p>
+<div class="card text-white bg-success mt-proj">
+
+  <div class="card-header">
+    <span class="dg-bold"><%= @project_to_swipe.title %></span>
+    <%= link_to "Back to Browsing", browse_path, class: "float-right dg" %>
+  </div>
+  <div class="card-body lgb">
+    <p class="card-text italics">Project proposed by <%= link_to Profile.find_by(account_id: @project_to_swipe.account_id).name, Profile.find_by(account_id: @project.account_id), class: "white-text" %></p>
+    <% if @project_to_swipe.image.attached? %>
+      <%= image_tag @project_to_swipe.image, class: "image" %>
+    <% end %>
+    <% replacements = {
+        '[' => '', ']' => '',
+        '/' => '', '"' => ''} %>
+    <p class="card-text descrip"><%= markdown @project_to_swipe.description %></p>
+    <p class="card-text"><span class="white-text">Skills: </span> <%= @project_to_swipe.skills.gsub(Regexp.union(replacements.keys), replacements)[2..-1] %></p>
+    <p class="card-text"><span class="white-text">Category: </span> <%= @project_to_swipe.category %></p>
   </div>
 </div>
