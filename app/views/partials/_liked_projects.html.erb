@@ -10,20 +10,22 @@
   <div class="card-body collapse multi-collapse show" id="multiCollapse1">
     <% @liked_projects.each do |proj| %>
     <h5 class="card-title"><%= link_to proj.title, proj, class: "proj-links" %></h5>
-
     <div class="card-text" id=<%= "div_swipe"+ Swipe.find_by(project_id: proj.id, account_id: current_account.id).id.to_s %>>
       <%= link_to "@"+Account.find(proj.account_id).profile.name, Profile.find_by(account_id: proj.account_id), class: "proj-links" %> |
        <span style="color: white;" id=<%= "swipe"+ Swipe.find_by(project_id: proj.id, account_id: current_account.id).id.to_s %> >
          <% if Swipe.find_by(project_id: proj.id, account_id: current_account.id).messages.last.nil? %>
          No messages.
+         <a href=<%= swipe_path(Swipe.find_by(project_id: proj.id, account_id: current_account.id)) %> >
+          <i class="fa fa-comment" style="color: springgreen;"></i>
+        </a>
          <% else %>
            <%= Account.find(Swipe.find_by(project_id: proj.id, account_id: current_account.id).messages.last.account_id).profile.name %>
-          <%= markdown (" : "+Swipe.find_by(project_id: proj.id, account_id: current_account.id).messages.last.body[0..20].gsub('<br>', "").gsub('\\', '').gsub('<br/>', "")) +'...' %>
+           <span class="ellipsis-text"><%= markdown (" : "+Swipe.find_by(project_id: proj.id, account_id: current_account.id).messages.last.body.gsub('<br>', "").gsub('\\', '').gsub('<br/>', "")) %></span>
          <% end %>
-       </span>
-       <a href=<%= swipe_path(Swipe.find_by(project_id: proj.id, account_id: current_account.id)) %> >
-        <i class="fa fa-comment" style="color: springgreen;"></i>
-      </a>
+         </span>
+         <a href=<%= swipe_path(Swipe.find_by(project_id: proj.id, account_id: current_account.id)) %> >
+          <i class="fa fa-comment ml-1" style="color: springgreen;"></i>
+        </a>
      </div>
     <% end %>
   </div>

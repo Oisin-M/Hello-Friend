@@ -26,7 +26,7 @@ document.addEventListener('turbolinks:load', () => {
         document.getElementById("div_swipe"+data.swipe_id).innerHTML="Here's some stuff"
 
         const swipe_span = document.getElementById("swipe"+data.swipe_id);
-        var html_to_add = String(data.sender+data.message);
+        var html_to_add = data.sender+" "+"<span class='ellipsis-text'>"+String(data.message)+"</span>";
         swipe_span.innerHTML=html_to_add;
         MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 

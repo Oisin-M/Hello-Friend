@@ -19,11 +19,11 @@
            No messages.
            <% else %>
              <%= Account.find(like.messages.last.account_id).profile.name %>
-             <%= markdown(" : "+like.messages.last.body[0..20].gsub('<br>', "").gsub('\\', '').gsub('<br/>', ''))+ '...' %>
+             <span class="ellipsis-text"><%= markdown(" : "+like.messages.last.body) %></span>
            <% end %>
          </span>
          <a href=<%= swipe_path(Swipe.find_by(project_id: proj.id, account_id: like.account_id)) %> >
-          <i class="fa fa-comment" style="color: springgreen;"></i>
+          <i class="fa fa-comment ml-1" style="color: springgreen; margin-left: -10px"></i>
          </a>
        </div>
       <% end %>
