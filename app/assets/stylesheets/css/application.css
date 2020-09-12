@@ -134,3 +134,7 @@ body {
   border-radius: 50%;
   object-fit: cover;
 }
+
+.form-col {
+  margin-right: 15px;
+}
