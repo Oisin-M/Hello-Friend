@@ -5,6 +5,7 @@
 <% end %>
 </div>
 <div class="col">
+  <div class="date-text"><%= msg.created_at.strftime("%b %e %Y at %H:%M") %></div>
   <div class="small-text"><%= Account.find(msg.account_id).profile.name %></div>
 <div class="container other-message">
   <span class="message-body"><%= markdown msg.body %></span>

@@ -63,8 +63,16 @@ a:hover {
   height: 75px;
 }
 
-.small-text {
+.date-text {
   font-size: 10px;
+  color: white;
+  padding-left: 10px;
+  text-align: left;
+}
+
+.small-text {
+  font-size: 12.5px;
+  font-weight: bold;
   color: white;
   padding-left: 10px;
   text-align: left;
