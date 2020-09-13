@@ -1,6 +1,6 @@
 class LikeChannel < ApplicationCable::Channel
   def subscribed
-     stream_from "like_channel_#{params[:account_id]}" #params[:account_id]==current_account.id
+     stream_from "like_channel_#{params[:account_id]}" #params[:account_id]==current_account.id for a like
   end
 
   def unsubscribed

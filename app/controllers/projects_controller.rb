@@ -1,12 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
-  # GET /projects
-  # GET /projects.json
-  def index
-    @projects = Project.all
-  end
-
   def new_project
     if account_signed_in?
       if current_account.profile.nil?
@@ -36,18 +30,26 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    @my_projects=Project.where(account_id: current_account.id)
-    @seen = Swipe.where(account_id: current_account.id)
-    @likes = @seen.where(liked: true)
-    @liked_project_ids = []
-    @likes.each do |like|
-      @liked_project_ids.append(like.project_id)
+    if account_signed_in?
+      if current_account.profile.nil?
+        no_profile_page
+    else
+        @my_projects=Project.where(account_id: current_account.id)
+        @seen = Swipe.where(account_id: current_account.id)
+        @likes = @seen.where(liked: true)
+        @liked_project_ids = []
+        @likes.each do |like|
+          @liked_project_ids.append(like.project_id)
+        end
+        @liked_projects = Project.where(id: @liked_project_ids)
+
+        @my_profile=Profile.where(account_id: current_account.id).first
+
+        render "home/browse"
+      end
+    else
+      redirect_to root_path
     end
-    @liked_projects = Project.where(id: @liked_project_ids)
-
-    @my_profile=Profile.where(account_id: current_account.id).first
-
-    render "home/browse"
   end
 
   # GET /projects/new
@@ -57,22 +59,28 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    if account_signed_in?
+      if current_account.profile.nil?
+        no_profile_page
+    else
+        @my_projects=Project.where(account_id: current_account.id)
+        @seen = Swipe.where(account_id: current_account.id)
+        @likes = @seen.where(liked: true)
+        @liked_project_ids = []
+        @likes.each do |like|
+          @liked_project_ids.append(like.project_id)
+        end
+        @liked_projects = Project.where(id: @liked_project_ids)
 
-    @my_projects=Project.where(account_id: current_account.id)
-    @seen = Swipe.where(account_id: current_account.id)
-    @likes = @seen.where(liked: true)
-    @liked_project_ids = []
-    @likes.each do |like|
-      @liked_project_ids.append(like.project_id)
+        @edit_project = "not null"
+
+        @my_profile=Profile.where(account_id: current_account.id).first
+
+        render "home/browse"
+      end
+    else
+      redirect_to root_path
     end
-    @liked_projects = Project.where(id: @liked_project_ids)
-
-    @edit_project = "not null"
-
-    @my_profile=Profile.where(account_id: current_account.id).first
-
-    render "home/browse"
-
   end
 
   # POST /projects
