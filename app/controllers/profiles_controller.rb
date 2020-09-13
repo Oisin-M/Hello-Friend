@@ -1,12 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
-  # GET /profiles
-  # GET /profiles.json
-  def index
-    @profiles = Profile.all
-  end
-
   # GET /profiles/1
   # GET /profiles/1.json
   def show
@@ -90,16 +84,6 @@ class ProfilesController < ApplicationController
         format.html { render :edit }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /profiles/1
-  # DELETE /profiles/1.json
-  def destroy
-    @profile.destroy
-    respond_to do |format|
-      format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
