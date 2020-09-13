@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def not_signed_in_page
+  def no_profile_page
 
     @my_projects=Project.where(account_id: current_account.id)
     @seen = Swipe.where(account_id: current_account.id)
@@ -16,5 +16,5 @@ class ApplicationController < ActionController::Base
     @new_profile = "not null"
     render "home/browse"
   end
-  
+
 end

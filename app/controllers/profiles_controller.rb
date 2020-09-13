@@ -10,19 +10,26 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    if account_signed_in?
+      if current_account.profile.nil?
+        no_profile_page
+      else
+        @my_projects=Project.where(account_id: current_account.id)
+        @seen = Swipe.where(account_id: current_account.id)
+        @likes = @seen.where(liked: true)
+        @liked_project_ids = []
+        @likes.each do |like|
+          @liked_project_ids.append(like.project_id)
+        end
+        @liked_projects = Project.where(id: @liked_project_ids)
 
-    @my_projects=Project.where(account_id: current_account.id)
-    @seen = Swipe.where(account_id: current_account.id)
-    @likes = @seen.where(liked: true)
-    @liked_project_ids = []
-    @likes.each do |like|
-      @liked_project_ids.append(like.project_id)
+        @my_profile=Profile.where(account_id: current_account.id).first
+
+        render "home/browse"
+      end
+    else
+      redirect_to root_path
     end
-    @liked_projects = Project.where(id: @liked_project_ids)
-
-    @my_profile=Profile.where(account_id: current_account.id).first
-
-    render "home/browse"
   end
 
   # GET /profiles/new
@@ -32,21 +39,28 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+    if account_signed_in?
+      if current_account.profile.nil?
+        no_profile_page
+      else
+        @my_projects=Project.where(account_id: current_account.id)
+        @seen = Swipe.where(account_id: current_account.id)
+        @likes = @seen.where(liked: true)
+        @liked_project_ids = []
+        @likes.each do |like|
+          @liked_project_ids.append(like.project_id)
+        end
+        @liked_projects = Project.where(id: @liked_project_ids)
 
-    @my_projects=Project.where(account_id: current_account.id)
-    @seen = Swipe.where(account_id: current_account.id)
-    @likes = @seen.where(liked: true)
-    @liked_project_ids = []
-    @likes.each do |like|
-      @liked_project_ids.append(like.project_id)
+        @edit_profile = "not null"
+
+        @my_profile=Profile.where(account_id: current_account.id).first
+
+        render "home/browse"
+      end
+    else
+      redirect_to root_path
     end
-    @liked_projects = Project.where(id: @liked_project_ids)
-
-    @edit_profile = "not null"
-
-    @my_profile=Profile.where(account_id: current_account.id).first
-
-    render "home/browse"
   end
 
   # POST /profiles

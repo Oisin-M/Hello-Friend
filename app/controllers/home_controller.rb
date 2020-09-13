@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   def index
     if account_signed_in?
       if current_account.profile.nil?
-        not_signed_in_page
+        no_profile_page
       else
         redirect_to browse_path
       end
@@ -13,7 +13,7 @@ class HomeController < ApplicationController
   def browse
     if account_signed_in?
       if current_account.profile.nil?
-        not_signed_in_page
+        no_profile_page
       else
       #@project_to_swipe=Project.first #get first suitable project
 
@@ -40,5 +40,5 @@ class HomeController < ApplicationController
       redirect_to root_path
     end
   end
-  
+
 end

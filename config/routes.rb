@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :profiles
-  resources :swipes
-  resources :messages
-  resources :projects
+  resources :profiles, except: [:index, :destroy, :new]
+  resources :swipes, except: [:index, :update, :destroy]
+  resources :messages, except: [:index, :update, :destroy]
+  resources :projects, except: [:index,:new]
   devise_for :accounts
 
   root 'home#index'

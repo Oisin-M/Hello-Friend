@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
   def new_project
     if account_signed_in?
       if current_account.profile.nil?
-        not_signed_in_page
+        no_profile_page
     else
       @my_projects=Project.where(account_id: current_account.id)
       @seen = Swipe.where(account_id: current_account.id)
