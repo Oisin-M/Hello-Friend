@@ -1,41 +1,39 @@
 class SwipesController < ApplicationController
   before_action :set_swipe, only: [:show, :edit, :update, :destroy]
 
-  # GET /swipes
-  # GET /swipes.json
-  def index
-    @swipes = Swipe.all
-  end
-
   # GET /swipes/1
   # GET /swipes/1.json
   def show
-    #might want this inside create instead of show
-    # @project = Project.find(4) #find the next project to display
-    # render "home/browse"
 
-    @my_projects=Project.where(account_id: current_account.id)
-    @seen = Swipe.where(account_id: current_account.id)
-    @likes = @seen.where(liked: true)
-    @liked_project_ids = []
-    @likes.each do |like|
-      @liked_project_ids.append(like.project_id)
+    if account_signed_in?
+      if current_account.profile.nil?
+        no_profile_page
+    else
+        #might want this inside create instead of show
+        # @project = Project.find(4) #find the next project to display
+        # render "home/browse"
+
+        @my_projects=Project.where(account_id: current_account.id)
+        @seen = Swipe.where(account_id: current_account.id)
+        @likes = @seen.where(liked: true)
+        @liked_project_ids = []
+        @likes.each do |like|
+          @liked_project_ids.append(like.project_id)
+        end
+        @liked_projects = Project.where(id: @liked_project_ids)
+
+        @my_profile=Profile.where(account_id: current_account.id).first
+
+        render "home/browse"
+      end
+    else
+      redirect_to root_path
     end
-    @liked_projects = Project.where(id: @liked_project_ids)
-
-    @my_profile=Profile.where(account_id: current_account.id).first
-
-    render "home/browse"
-
   end
 
   # GET /swipes/new
   def new
     @swipe = Swipe.new
-  end
-
-  # GET /swipes/1/edit
-  def edit
   end
 
   # POST /swipes

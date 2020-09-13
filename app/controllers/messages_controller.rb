@@ -2,17 +2,6 @@ class MessagesController < ApplicationController
   include ApplicationHelper #give me my markdown method
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
-  # GET /messages
-  # GET /messages.json
-  def index
-    @messages = Message.all
-  end
-
-  # GET /messages/1
-  # GET /messages/1.json
-  def show
-  end
-
   # GET /messages/new
   def new
     @message = Message.new
