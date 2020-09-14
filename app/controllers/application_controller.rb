@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def skills
+    @skills_list=[['Python', 'Python'], ['JavaScript', 'JavaScript'], ['C#', 'C#'], ['Ruby', 'Ruby'], ['HTML', 'HTML']]
+  end
+
   def no_profile_page
 
     @my_projects=Project.where(account_id: current_account.id)
@@ -15,13 +19,9 @@ class ApplicationController < ActionController::Base
 
     @new_profile = "not null"
 
-    @skills_list=[['Python', 'Python'], ['JavaScript', 'JavaScript'], ['C#', 'C#'], ['Ruby', 'Ruby'], ['HTML', 'HTML']]
+    skills
 
     render "home/browse"
-  end
-
-  def skills
-    @skills_list=[['Python', 'Python'], ['JavaScript', 'JavaScript'], ['C#', 'C#'], ['Ruby', 'Ruby'], ['HTML', 'HTML']]
   end
 
   def category
