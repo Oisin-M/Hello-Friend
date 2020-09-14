@@ -19,8 +19,8 @@ https://github.com/Oisin-M/Hello-Friend/tree/Webfest
 After the Webfest, I redid the project from scratch since I was not happy with some of the functionality. I switched to using ActionCable for live updates, and also implemented Devise account authentication, image uploads using Active Storage and Kramdown with Mathjax and Rouge for markdown in descriptions and messages.
 
 ## Developers
-Oisín Morrison (Project Lead)
-Brian O'Sullivan
-Scott Murphy
-Barry O'Donnell
+Oisín Morrison (Project Lead)</br>
+Brian O'Sullivan</br>
+Scott Murphy</br>
+Barry O'Donnell</br>
 Cormac Kavanagh
