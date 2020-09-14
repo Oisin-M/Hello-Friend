@@ -49,12 +49,7 @@
 
   <div class="field row">
     <div class="col-xl-2 col-lg-3 col-md-3 col-sm-2 col-xs-3 form-col" align="left"><%= form.label :skills %></div>
-    <div class="col" align="left"><%= form.select(:skills, [['Python', 'Python'],
-                              ['JavaScript', 'JavaScript'],
-                              ['C#', 'C#'],
-                              ['Ruby', 'Ruby'],
-                              ['HTML', 'HTML']
-                             ], {:include_blank => true },
+    <div class="col" align="left"><%= form.select(:skills, @skills_list, {:include_blank => true },
                                { :multiple => true }
                              ) %></div>
   </div>
@@ -62,11 +57,7 @@
 
   <div class="field row">
     <div class="col-xl-2 col-lg-3 col-md-3 col-sm-2 col-xs-3 form-col" align="left"><%= form.label :category %></div>
-    <div class="col" align="left"><%= form.select(:category, [['Python', 'Python'],
-                              ['JavaScript', 'JavaScript'],
-                              ['C#', 'C#'],
-                              ['Ruby', 'Ruby'],
-                              ['HTML', 'HTML']],
+    <div class="col" align="left"><%= form.select(:category, @category_list,
                                {:include_blank => true },
                                { :multiple => false }
                              ) %></div>

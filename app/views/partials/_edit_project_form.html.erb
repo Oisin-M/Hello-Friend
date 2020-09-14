@@ -57,12 +57,7 @@
     else
     selected_skills = @project.skills.gsub(Regexp.union(replacements.keys), replacements)[2..-1].split(", ")
     end %>
-    <div class="col" align="left"><%= form.select(:skills, [['Python', 'Python'],
-                              ['JavaScript', 'JavaScript'],
-                              ['C#', 'C#'],
-                              ['Ruby', 'Ruby'],
-                              ['HTML', 'HTML']
-                             ], {:selected => selected_skills, :include_blank => true },
+    <div class="col" align="left"><%= form.select(:skills, @skills_list, {:selected => selected_skills, :include_blank => true },
                                { :multiple => true }
                              ) %></div>
   </div>
@@ -70,11 +65,7 @@
 
   <div class="field row">
     <div class="col-xl-2 col-lg-3 col-md-3 col-sm-2 col-xs-3 form-col" align="left"><%= form.label :category %></div>
-    <div class="col" align="left"><%= form.select(:category, [['Python', 'Python'],
-                              ['JavaScript', 'JavaScript'],
-                              ['C#', 'C#'],
-                              ['Ruby', 'Ruby'],
-                              ['HTML', 'HTML']],
+    <div class="col" align="left"><%= form.select(:category, @category_list,
                                {:selected => @project.category, :include_blank => true },
                                { :multiple => false }
                              ) %></div>

@@ -19,6 +19,9 @@ class ProjectsController < ApplicationController
 
       @new_project = "not null"
 
+      skills
+      category
+
       render "home/browse"
       end
     else
@@ -75,6 +78,9 @@ class ProjectsController < ApplicationController
         @edit_project = "not null"
 
         @my_profile=Profile.where(account_id: current_account.id).first
+
+        skills
+        category
 
         render "home/browse"
       end

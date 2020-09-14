@@ -14,7 +14,18 @@ class ApplicationController < ActionController::Base
     @liked_projects = Project.where(id: @liked_project_ids)
 
     @new_profile = "not null"
+
+    @skills_list=[['Python', 'Python'], ['JavaScript', 'JavaScript'], ['C#', 'C#'], ['Ruby', 'Ruby'], ['HTML', 'HTML']]
+
     render "home/browse"
+  end
+
+  def skills
+    @skills_list=[['Python', 'Python'], ['JavaScript', 'JavaScript'], ['C#', 'C#'], ['Ruby', 'Ruby'], ['HTML', 'HTML']]
+  end
+
+  def category
+    @category_list=[['Python', 'Python'], ['JavaScript', 'JavaScript'], ['C#', 'C#'], ['Ruby', 'Ruby'], ['HTML', 'HTML']]
   end
 
 end

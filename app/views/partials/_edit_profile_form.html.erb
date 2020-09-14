@@ -66,12 +66,7 @@
           selected_skills = @profile.skills.gsub(Regexp.union(replacements.keys), replacements)[2..-1].split(", ")
           end %>
 
-          <div class="col" align="left"><%= form.select(:skills, [['Python', 'Python'],
-                                    ['JavaScript', 'JavaScript'],
-                                    ['C#', 'C#'],
-                                    ['Ruby', 'Ruby'],
-                                    ['HTML', 'HTML']
-                                   ], {:selected => selected_skills, :include_blank => true },
+          <div class="col" align="left"><%= form.select(:skills, @skills_list, {:selected => selected_skills, :include_blank => true },
                                      { :multiple => true }
                                    ) %></div>
         </div>

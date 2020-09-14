@@ -50,6 +50,8 @@ class ProfilesController < ApplicationController
 
         @my_profile=Profile.where(account_id: current_account.id).first
 
+        skills
+
         render "home/browse"
       end
     else
