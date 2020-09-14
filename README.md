@@ -11,7 +11,8 @@ Our project submission page: </br>
 https://webfest.cern/node/276
 </br>
 Our project idea proposal page: </br>
-https://webfest.cern/project/hello-friend
+https://webfest.cern/project/hello-friend 
+</br>
 The repository at the point of submission: </br>
 https://github.com/Oisin-M/Hello-Friend/tree/Webfest
 
