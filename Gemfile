@@ -25,7 +25,6 @@ gem 'jbuilder', '~> 2.7'
 
 
 gem 'devise', '~> 4.7', '>= 4.7.2'
-gem 'redis', '~> 4.2', '>= 4.2.1'
 gem 'kramdown', '~> 2.3'
 gem 'rouge', '~> 3.20'
 
@@ -47,6 +46,8 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
+
+  gem 'redis', '~> 4.2', '>= 4.2.1'
 end
 
 group :test do
