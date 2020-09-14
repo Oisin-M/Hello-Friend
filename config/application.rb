@@ -23,7 +23,7 @@ module HelloFriend
       :domain => 'mail.google.com',
       :port => 587,
       :user_name => "hello.friend.automatedmail@gmail.com",
-      :password => "this is automated17",
+      :password => ENV['GMAIL_PASSWORD'],
       :authentication => 'login',
       :enable_starttls_auto => true
     }
