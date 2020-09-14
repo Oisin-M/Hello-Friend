@@ -12,11 +12,14 @@ https://webfest.cern/node/276
 </br>
 Our project idea proposal page: </br>
 https://webfest.cern/project/hello-friend
-The repository at the point of submission:
+The repository at the point of submission: </br>
 https://github.com/Oisin-M/Hello-Friend/tree/Webfest
 
 ## Post Submission (Project lead)
 After the Webfest, I redid the project from scratch since I was not happy with some of the functionality. I switched to using ActionCable for live updates, and also implemented Devise account authentication, image uploads using Active Storage, and Kramdown with Mathjax and Rouge for markdown in descriptions and messages.
+
+## The Site
+The project is live at https://hello---friend.herokuapp.com/
 
 ## Developers
 - Oisín Morrison (Project Lead)
